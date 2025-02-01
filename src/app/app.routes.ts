@@ -14,8 +14,8 @@ import { ForgetPasswordComponent } from './Pages/Auth/forget-password/forget-pas
 import { NotFoundComponent } from './Components/SharedComponent/not-found/not-found.component';
 import { ProductDetailsComponent } from './Pages/product-details/product-details.component';
 import { AuthComponent } from './Pages/Auth/auth/auth.component';
-import { isLoginGuard } from './core/Guards/is-login.guard';
 import { WishlistComponent } from './Pages/wishlist/wishlist.component';
+import { isLoginGuard } from './core/Guards/is-login.guard';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -33,7 +33,7 @@ export const routes: Routes = [
     {
         path: 'auth',
         component: AuthComponent,
-        canActivate: [isLoginGuard],
+       canActivate:[isLoginGuard],
         children: [
             {path: 'auth', redirectTo: 'login', pathMatch: 'full'},
             {path: 'login',title:"Login" ,component: LoginComponent},
