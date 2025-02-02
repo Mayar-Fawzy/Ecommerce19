@@ -7,7 +7,7 @@ export const isLoginGuard: CanActivateFn = (route, state) => {
   if(isPlatformBrowser(_PLATFORM_ID)){
 
     const _Router=inject(Router);
-    if(localStorage.getItem('token') == null){ 
+    if(localStorage.getItem('token') !== null){ 
       _Router.navigate(['/home'])
       return false;
   }

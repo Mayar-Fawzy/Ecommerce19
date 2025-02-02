@@ -1,1 +1,93 @@
-<p>navbar works!</p>
+<header class="px-4 py-3 d-flex justify-content-between align-items-center shadow-sm rounded-5 m-2">
+  <div class="LeftSide gap-3 d-flex align-items-center">
+    <div class="logo">
+      <a
+        routerLink="/home"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <img src="Imges/freshcart-logo.svg" alt="" />
+      </a>
+    </div>
+   
+  </div>
+  <nav>
+    <ul class="d-flex gap-3 list-unstyled m-0">
+      <li>
+        <a
+          routerLink="/home"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/Product"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Products</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/Categories"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Categories</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/Brands"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >brands</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <div class="rightSide d-flex align-items-center gap-3">
+    <div class="socialIcons d-flex  align-items-center gap-2">
+      <i routerLink="/Wishlist" routerLinkActive="ActiveIcon"  class="fa-regular fs-5 fa-heart"></i>
+      <i routerLink="/Cart" routerLinkActive="ActiveIcon" class="fa-solid fs-5 fa-cart-shopping"></i>
+    </div>
+    <div class="PersonalData">
+      <div class="avatarr" (click)="toggleShow()">
+        <img class="AvatarImg"  src="Imges/Avatar.png" width="35" alt="" />
+      </div>
+      <div  class="Person shadow-lg" [ngClass]='Show? "Show":" " '>
+        <h3 class="h5 m-0">User Profile</h3>
+        <hr />
+        <div class="info d-flex align-items-center gap-4">
+          <div class="imggg">
+            <img class="AvatarImg" src="Imges/Avatar.png" width="50" alt="" />
+          </div>
+
+          <div class="infoFrontofPhoto">
+            <h5>Username</h5>
+            <p>email</p>
+          </div>
+        </div>
+        <hr />
+       
+        <div class="AccountSettings d-flex align-items-center gap-5">
+
+            <div class="LogoSetting">
+                <i class="fa fs-4 fa-user"></i>
+            </div>
+            <div routerLink="/Personal" class="AccountData pt-2">
+                <h5 class="h6">My Profile</h5>
+                <h5 class="h6">Account Settings</h5>
+            </div>
+        </div>
+        <hr>
+       
+    
+        <div class="LogOut">
+            <button class=" btn-LogOut "> LogOut<i class="p-1 fa-solid fa-right-from-bracket"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

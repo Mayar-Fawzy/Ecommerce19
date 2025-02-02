@@ -16,31 +16,36 @@ import { ProductDetailsComponent } from './Pages/product-details/product-details
 import { AuthComponent } from './Pages/Auth/auth/auth.component';
 import { WishlistComponent } from './Pages/wishlist/wishlist.component';
 import { isLoginGuard } from './core/Guards/is-login.guard';
+import { RoutesComponent } from './layout/routes/routes.component';
 
 export const routes: Routes = [
-    {path: '', redirectTo: 'home', pathMatch: 'full'},
-    {path: 'home', title:"Home",component: HomeComponent},
-    {path: 'Product', title:"Products",component: ProductComponent},
-    {path: 'ProductDetailes/:productId', title:"ProductDetaile",component: CartComponent},
-    {path: 'Categories', title:"Categories",component: CategoriesComponent},
-    {path: 'CategoriesProducts/:CatgoryId', title:"Categories",component: ProductByCategorisComponent},
-    {path: 'Brands', title:"Brands",component: BrandsComponent},
-    {path: 'BrandsProducts/:CatgoryId', title:"Brands",component: ProductByBrandsComponent},
-    {path: 'Cart', title:"Cart",component: CartComponent},
-    {path: 'Personal', title:"Personal",component: CartComponent},
-    {path: 'Wishlist', title:"Wishlist",component: WishlistComponent},
-   
-    {
-        path: 'auth',
-        component: AuthComponent,
-       canActivate:[isLoginGuard],
-        children: [
-            {path: 'auth', redirectTo: 'login', pathMatch: 'full'},
-            {path: 'login',title:"Login" ,component: LoginComponent},
-            {path: 'Register',title:"Register" ,component: RegisterComponent},
-            {path: 'Forgetpassword',title:"ForgetPassword" ,component: ForgetPasswordComponent},
-        ]
-    },
 
-    {path:"**" ,title:"Not Found" ,component:NotFoundComponent },
+
+    {path:'' , component: RoutesComponent , children:[
+        {path: '', redirectTo: 'home', pathMatch: 'full'},
+        {path: 'home', title:"Home",component: HomeComponent},
+        {path: 'Product', title:"Products",component: ProductComponent},
+        {path: 'ProductDetailes/:productId', title:"ProductDetaile",component: CartComponent},
+        {path: 'Categories', title:"Categories",component: CategoriesComponent},
+        {path: 'CategoriesProducts/:CatgoryId', title:"Categories",component: ProductByCategorisComponent},
+        {path: 'Brands', title:"Brands",component: BrandsComponent},
+        {path: 'BrandsProducts/:CatgoryId', title:"Brands",component: ProductByBrandsComponent},
+        {path: 'Cart', title:"Cart",component: CartComponent},
+        {path: 'Personal', title:"Personal",component: PersonalComponent},
+        {path: 'Wishlist', title:"Wishlist",component: WishlistComponent},
+        {
+            path: 'auth',
+            component: AuthComponent,
+           canActivate:[isLoginGuard],
+            children: [
+                {path: '', redirectTo: 'login', pathMatch: 'full'},
+                {path: 'login',title:"Login" ,component: LoginComponent},
+                {path: 'Register',title:"Register" ,component: RegisterComponent},
+                {path: 'Forgetpassword',title:"ForgetPassword" ,component: ForgetPasswordComponent} ]
+        },
+    
+        {path:"**" ,title:"Not Found" ,component:NotFoundComponent },
+       
+    ]},
+    
 ];

@@ -1,0 +1,84 @@
+.active{
+    color: var(--main-color);
+    
+}
+.socialIcons{
+    font-size: 20px;
+    padding-left: 10px;
+    color: var(--main-color);
+    
+}
+.Person{
+    position: absolute;
+    top: 60px;
+    padding: 30px;
+    right: 24px;
+    width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.08) 1px 2px 10px;
+    background-color: rgb(255, 255, 255);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 5px;
+    outline: 0px;
+    opacity: 0;
+    transition: 1s opacity ease-in ,1s max-height ease-in-out;
+    max-height: 0;
+ 
+    
+   overflow: hidden;
+ 
+}
+.Person.Show{
+    opacity: 1;
+    max-height: 500px;
+    transition: 1s opacity ease-in, 1s  max-height ease-in-out;
+  
+}
+
+.AvatarImg{
+    background-color: var(--main-color);
+    border-radius: 50%;
+}
+.btn-LogOut{
+    background-color: var(--main-color);
+       display: block; width: 100%;
+         color: var(    --light-color);
+         outline: none;
+        padding: 8px; 
+        border: none;
+        border-radius: 10px;
+}
+.LogoSetting{
+    
+background-color: rgba(229, 251, 230, 0.697);
+color: rgba(7, 215, 3, 0.541);
+min-width: 40px;
+width: 45px;
+height: 45px;
+justify-content: center;
+display: flex; align-items: center;
+padding: 6px 8px;
+border-radius: 5px
+
+}
+.AccountData{
+    
+    color: rgb(119, 126, 137);
+}
+.AccountData :hover{
+    color: rgba(108, 221, 98, 0.941);
+
+    cursor: pointer;
+}
+
+.socialIcons:hover{
+   
+
+    cursor: pointer;
+}
+.ActiveIcon{
+    box-shadow: rgba(0, 0, 0, 0.08) 1px 2px 10px;
+
+    padding: 4px;
+  
+    border-radius: 4px;
+}
