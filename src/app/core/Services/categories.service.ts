@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Environment } from '../../Environments/Environment';
-import { GlobalService } from './global.service';
+
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriesService extends GlobalService {
-  apiUrl:string;
-  constructor() {
-     super()
-        this.apiUrl=`${Environment.baseUrl}${Environment.VersionUrl}`
-   }
-  getAllCategories<C>(limit:number,page:number,brand?:string,category?:string,price?:number):Observable<any>{
-    return this.getAll(`${this.apiUrl}categories`,limit,page,brand,category)
+export class CategoriesService  { 
+
+   apiUrl:string=`${Environment.baseUrl}${Environment.VersionUrl}`
+   constructor(private http: HttpClient) { }
+  getAllCategories():Observable<any>{
+    return this.http.get(`${this.apiUrl}categories`)
 
   }
-  getCategoriesById<T>(id:string):Observable<any>{
-    return this.GetOne(`${this.apiUrl}categories`,id)
+  getCategoriesById(id:string):Observable<any>{
+    return this.http.get(`${this.apiUrl}categories/${id}`)
   }
-  
-  
 }
+  
+

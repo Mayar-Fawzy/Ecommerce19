@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import { GlobalService } from './global.service';
 import { Environment } from '../../Environments/Environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService extends GlobalService {
-  apiUrl:string;
-  constructor() { 
+export class ProductsService  {
+ 
+  constructor(private http: HttpClient) { }
 
-    super()
-    this.apiUrl=`${Environment.baseUrl}${Environment.VersionUrl}`
-  }
-  getAllProducts<P>(limit:number,page:number,brand?:string,category?:string,price?:number):Observable<any>{
-    return this.getAll(`${this.apiUrl}products`,limit,page,brand,category)
+    
+    apiUrl:string=`${Environment.baseUrl}${Environment.VersionUrl}`
+  
+  getAllProducts(limit:number,page:number,brand?:string,category?:string,price?:number):Observable<any>{
+    return this.http.get(`${this.apiUrl}/products?limit=${limit}&brand=${brand}8&price[lte]=${price}&category[in]=${category}`)
 
   }
-  getProductById<T>(id:string):Observable<any>{
-     return this.GetOne(`${this.apiUrl}products`,id)
+  getProductById(id:string):Observable<any>{
+    return this.http.get(`${this.apiUrl}products/${id}`)
   }
   getProductByCategory(){
 

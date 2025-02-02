@@ -1,1 +1,17 @@
-<p>slider-category works!</p>
+<div class="Category">
+  <h2 class="m-1 p-2">Categories</h2>
+  <owl-carousel-o [options]="customOptions">
+    @for( Cat of categories ;track Cat._id){
+    <ng-container>
+      <ng-template carouselSlide [id]="Cat.id" >
+        <div class="card" [routerLink]="['/CategoriesProducts', Cat._id]">
+          <img [src]="Cat.image" class="OwlImgge"  />
+        
+        </div>
+       
+      </ng-template>
+    </ng-container>
+    }
+  </owl-carousel-o>
+  
+</div>
