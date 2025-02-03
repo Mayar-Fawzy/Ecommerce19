@@ -1,38 +1,100 @@
-.cardProduct{
-background-color: rgb(255, 255, 255);
-color: rgba(0, 0, 0, 0.87);
-box-shadow: rgba(10, 173, 10, 0.15) 0px 8px 15px -5px, rgba(0, 0, 0, 0.2) 0px 4px 10px -6px;
-
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-transform: scale(1);
-  width: 200px; height: 280px;
-  border: 2px solid var(--main-color);
-
-// transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
-overflow: hidden;
-border-radius: 20px;
-margin: 20px;
-padding: 0px;
+.Allcard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
 }
-.cardProduct:hover{
-    cursor: pointer;
-    transform: scale(1.05);
-    box-shadow: rgba(10, 173, 10, 0.1) 0px 15px 30px -5px, rgba(10, 173, 10, 0.4) 0px 10px 20px -8px;
+.cardProduct{
+  position: relative !important;
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: rgba(10, 173, 10, 0.15) 0px 8px 15px -5px,
+    rgba(0, 0, 0, 0.2) 0px 4px 10px -6px;
+
+ 
+  width: 280px;
+  height: 20%;
+
+ 
+  border-radius: 20px;
+  margin: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ChildDiv{
+  position: absolute !important;
+  top: 20px; right: -50px;
+  width:50px; height: 120px;
+  border-radius: 10px 10px 0px 0px;
+  transition: 1s right ease-in;
+}
+
+.cardProduct:hover {
+  cursor: pointer;
+  // box-shadow: rgba(10, 173, 10, 0.1) 0px 15px 30px -5px,
+  //   rgba(10, 173, 10, 0.4) 0px 10px 20px -8px;
+  .cardProduct{
+    overflow: visible;
+  }
+  .ChildDiv{
+    top: 20px; right: 0px;
+    transition: 1s right ease-in;
+  }
+ 
+}
+.AllInfo {
+  margin: 6px;
+}
+.PriceAndStar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.star {
+  color: var(--rating-color);
+  font-size: 17px;
+}
+
+.imgCard {
+  
+  
+  height: 250px;
+  img {
+  
+    width: 100%;
+    background-position: center;
+     height: 100%;
+    object-fit: fill;
+  
+  }
   
 }
-.AllInfo{
-   margin: 6px;
-}
-.PriceAndStar{
-    display: flex; align-items: center;
-    justify-content: space-between;
-}
-.star{
-    color: var(--rating-color);
-    font-size: 17px;
-}
-.star-rating {
-    display: flex;
-    gap: 1px;
-    padding-bottom: 10px;
+.ShopCircle{
+  position: absolute;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  top: 225px; right: 25px;
+  background-color:white;
+  .shopping:hover{
+    color: var(--main-color);
   }
+}
+
+.iconss{
+  display: flex;
+ flex-direction: column;
+align-items: center;
+  background-color: white;
+  gap: 18px; 
+  padding: 20px;
+  margin-top: 12px;
+ 
+  color: #777E89;
+  .heart:hover{
+    color: red;
+  }
+  .eye:hover{
+    color: var(--main-color);
+  }
+}
+

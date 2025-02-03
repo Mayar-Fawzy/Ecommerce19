@@ -25,7 +25,7 @@ export const routes: Routes = [
         {path: '', redirectTo: 'home', pathMatch: 'full'},
         {path: 'home', title:"Home",component: HomeComponent},
         {path: 'Product', title:"Products",component: ProductComponent},
-        {path: 'ProductDetailes/:productId', title:"ProductDetaile",component: CartComponent},
+        {path: 'ProductDetailes/:productId', title:"ProductDetaile",component: ProductDetailsComponent},
         {path: 'Categories', title:"Categories",component: CategoriesComponent},
         {path: 'CategoriesProducts/:CatgoryId', title:"Categories",component: ProductByCategorisComponent},
         {path: 'Brands', title:"Brands",component: BrandsComponent},

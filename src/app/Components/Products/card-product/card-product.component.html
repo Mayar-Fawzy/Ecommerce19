@@ -1,26 +1,49 @@
-<div class="cardProduct">
-  <div class="imgCard ">
-    <img
-      src="https://innowise.com/wp-content/uploads/2024/10/eCommerce-TIZER.jpg"
-      class="w-100"
-      alt=""
-    />
-  </div>
-  <div class="AllInfo">
-    <div class="infoCard">
-      <p class="h6 text-muted p-0">Woman Fashon</p>
-      <h5 class="lead">Woman Shawl </h5>
-    </div>
-    <div class="PriceAndStar pt-4">
-      <h6>20$</h6>
-      <div class="star-rating">
-        @for (item of [1,2,3,4,5]; track $index) {
-          <span class="star">
-            <i class="fa-solid fa-star"></i>
-          </span>
-          }
-      </div>
+<div class="py-5 my-4">
+  <h2 class="text-center">All Product</h2>
+  <div class="Allcard">
+    @for (Cardd of CardProducts; track Cardd._id) {
+      <div class="cardProduct">
+        <div class="ChildDiv">
+          <div class="iconss badge">
+            <i class="fa-solid fa-eye fs-4 eye"></i>
+            <i class="fa-regular fa-heart fs-4 heart"></i>
+         
+            </div>
+           
+          </div>
+        <div class="ShopCircle">
+              <i class="fa-solid fa-cart-shopping fs-3 p-2 shopping"></i>
+
+        </div>
+        <div class="AllCardInfo">
+          <div [routerLink]="['/ProductDetailes', Cardd._id]">
+            
+            <div class="imgCard">
+             
+              <img class=" w-100" [src]="Cardd.imageCover" alt="" />
+            </div>
+            <div class="AllInfo p-3">
+              <div class="infoCard">
+                <p class="h6 text-muted p-0">{{ Cardd.title | cut : 2 }}</p>
+                <h5 class="">{{ Cardd.category.name }}</h5>
+              </div>
+              <div class="PriceAndStar pt-4">
+                <h6 class="pt-3">{{ Cardd.price | currency : "USD" }}</h6>
+                <div class="star">
+                  @for (num of [1,2,3,4,5].slice(0,Cardd.ratingsAverage); track
+                  $index) {
     
-    </div>
+                  <span> <i class="fas fa-star rating-color"></i></span>}
+                  @if(Cardd.ratingsAverage %1 !==0){
+                  <i class="fa-solid fa-star-half-stroke rating-color star"></i> }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+    
   </div>
+ 
 </div>
