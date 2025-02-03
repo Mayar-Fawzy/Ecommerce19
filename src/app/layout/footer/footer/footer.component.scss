@@ -1,0 +1,111 @@
+.footer{
+  background-color: #151414;
+ 
+}
+.Contacts{ display: flex;
+    justify-content: space-between;
+    padding:50px ;
+}
+.icon{
+    color: var( --main-color);
+    margin-top: 15px;
+}
+.US{
+    color: white !important;
+    display: flex;
+    gap: 17px;
+   
+}
+.pmute{
+    color: gray !important;
+}
+.Part{
+    color: white !important;
+   
+    width: 30%;
+}
+.iconss {
+    display: flex;
+        
+    gap: 15px; /* المسافة بين الأيقونات */
+  }
+  
+  .iconss i {
+    color: white; /* لون الأيقونات */
+
+    width: 44px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important;
+    
+  }
+  
+  .iconss i:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .instagram {
+    background: linear-gradient(45deg, #833AB4, #FD1D1D, #FCB045);
+    border-radius: 50%;
+  }
+  .twitter {
+    background-color: #1DA1F2;
+    border-radius: 50%;
+  }
+  .facebook {
+    background-color: #1877F2;
+    border-radius: 50%;
+  }
+  .linee{
+     background-color:var(--main-color);
+     width: 100px; height: 2px;
+
+  }
+.info1,.info2{
+
+    .pmute:hover {
+        cursor: pointer;
+       color:var(--main-color) !important;
+    }
+  }
+  .Second{
+    display: flex;
+    gap: 30px;
+  }
+  .Inputt{
+    background-color: gray;
+    color: whitesmoke;
+    padding: 14px; 
+    border: 1px gray solid;
+  }
+  .send{
+    background-color: var(--main-color);
+    width: 60px; height: 54.5px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        cursor: pointer;
+    }
+  }
+
+  .EEnnd {
+    background-color: rgb(98, 97, 97);
+    text-align: center;
+     padding: 5px;
+    width: 100%;
+    bottom: 0;
+}
+
+
+.author {
+    color:var(--main-color);
+    font-weight: bold;
+}
+.greyLine{
+    background-color: gray;
+    width: 82rem; height: 2px;
+}
+
