@@ -1,19 +1,18 @@
 import { Component, inject } from '@angular/core';
 import { ProductsService } from '../../core/Services/products.service';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
-import { CardCategoryAndBrandsComponent } from '../../Components/card-category-and-brands/card-category-and-brands.component';
-import {ICategouryIbrands } from '../../core/interfaces/ICategouryIbrands';
+import { ICategouryIbrands } from '../../core/interfaces/ICategouryIbrands';
 import { CategoriesService } from '../../core/Services/categories.service';
+import { BrandsComponent } from '../brands/brands.component';
+import { CardCategoryComponent } from '../../Components/card-category/card-category.component';
 
 @Component({
   selector: 'app-categories',
-  imports: [CardCategoryAndBrandsComponent],
+  imports: [CardCategoryComponent],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.scss',
 })
 export class CategoriesComponent {
-
-
   CategourisList: ICategouryIbrands[] = [];
   private readonly _CategoriesService = inject(CategoriesService);
 
