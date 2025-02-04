@@ -17,6 +17,7 @@ import { AuthComponent } from './Pages/Auth/auth/auth.component';
 import { WishlistComponent } from './Pages/wishlist/wishlist.component';
 import { isLoginGuard } from './core/Guards/is-login.guard';
 import { RoutesComponent } from './layout/routes/routes.component';
+import { CategoriesAndBrrandsDetailsComponent } from './Pages/categories-and-brrands-details/categories-and-brrands-details.component';
 
 export const routes: Routes = [
 
@@ -27,6 +28,7 @@ export const routes: Routes = [
         {path: 'Product', title:"Products",component: ProductComponent},
         {path: 'ProductDetailes/:productId', title:"ProductDetaile",component: ProductDetailsComponent},
         {path: 'Categories', title:"Categories",component: CategoriesComponent},
+        {path:'CategoriesAndBrrandDetails/:CategoriesAndBrrandId',component:CategoriesAndBrrandsDetailsComponent},
         {path: 'CategoriesProducts/:CatgoryId', title:"Categories",component: ProductByCategorisComponent},
         {path: 'Brands', title:"Brands",component: BrandsComponent},
         {path: 'BrandsProducts/:CatgoryId', title:"Brands",component: ProductByBrandsComponent},

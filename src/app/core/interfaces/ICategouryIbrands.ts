@@ -1,5 +1,5 @@
 
-  export interface ICategoury {
+  export interface ICategouryIbrands {
     _id: string
     name: string
     slug: string
