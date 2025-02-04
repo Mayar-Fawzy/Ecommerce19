@@ -44,7 +44,7 @@ export const routes: Routes = [
       },
       { path: 'Brands', title: 'Brands', component: BrandsComponent },
       {
-        path: 'BrandsProducts/:CatgoryId',
+        path: 'BrandsProducts/:BrandId',
         title: 'Brands',
         component: ProductByBrandsComponent,
       },

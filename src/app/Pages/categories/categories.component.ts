@@ -1,24 +1,36 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ProductsService } from '../../core/Services/products.service';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { ICategouryIbrands } from '../../core/interfaces/ICategouryIbrands';
 import { CategoriesService } from '../../core/Services/categories.service';
 import { BrandsComponent } from '../brands/brands.component';
 import { CardCategoryComponent } from '../../Components/card-category/card-category.component';
+import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-categories',
-  imports: [CardCategoryComponent],
+  standalone: true, // إذا كنت تستخدم Angular 17+ مع standalone components
+  imports: [CardCategoryComponent, CommonModule], // تأكد من استيراد الوحدات المطلوبة
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.scss',
 })
-export class CategoriesComponent {
+export class CategoriesComponent implements OnInit {
+ 
   CategourisList: ICategouryIbrands[] = [];
   private readonly _CategoriesService = inject(CategoriesService);
+   
 
-  ngOnInit(): void {
-    this._CategoriesService.getAllCategories().subscribe((res) => {
-      this.CategourisList = res.data;
+  ngOnInit(): void {this.GetAll()}
+  
+  GetAll(){
+    this._CategoriesService.getAllCategories().subscribe({
+      next: (res) => {
+        this.CategourisList = res.data;
+      },
+      error: (err) => {
+        console.error('Error fetching all categories:', err);
+      },
     });
   }
 }

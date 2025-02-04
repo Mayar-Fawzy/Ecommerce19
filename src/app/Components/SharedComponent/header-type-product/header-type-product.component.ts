@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+
+
+import { DatePipe } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { ICategouryIbrands } from '../../../core/interfaces/ICategouryIbrands';
+
 
 @Component({
   selector: 'app-header-type-product',
@@ -7,5 +12,7 @@ import { Component } from '@angular/core';
   styleUrl: './header-type-product.component.scss'
 })
 export class HeaderTypeProductComponent {
-
+  
+  @Input() CardCategouryDetHeader: ICategouryIbrands | null = null;
+   
 }
