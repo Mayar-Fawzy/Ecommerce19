@@ -1,0 +1,52 @@
+.Allcard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .cardProduct{
+    background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: rgba(10, 173, 10, 0.15) 0px 8px 15px -5px,
+      rgba(0, 0, 0, 0.2) 0px 4px 10px -6px;
+   
+    width: 300px;
+    border-radius: 22px;
+    margin: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .cardProduct:hover {
+    cursor: pointer;
+   
+    .imgCard {
+     
+      img {
+        transform: scale(1.1);
+      }
+    }
+    .AllInfo {
+      margin-top: 17px;
+    }
+   
+  }
+  .AllInfo {
+    margin: 6px;
+    transition:   margin .8s ease-in;;
+  }
+  .imgCard {
+    
+    
+    height: 280px;
+    img {
+    
+      width: 100%;
+      background-position: center;
+       height: 100%;
+      object-fit: fill;
+       transition:   transform .8s ease-in;;
+    }
+  }
+  

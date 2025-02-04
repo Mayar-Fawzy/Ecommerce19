@@ -1,1 +1,27 @@
-<p>card-category-and-brands works!</p>
+<div class="py-2 my-4">
+  
+    <div class="Allcard ">
+      @for (Cardd of CardCategoury; track Cardd._id) {
+        <div class="cardProduct mt-5">
+          <div class="AllCardInfo">
+            <div [routerLink]="['/CategoriesProducts', Cardd._id]">
+              
+              <div class="imgCard">
+               
+                <img class=" w-100" [src]="Cardd.image" alt="" />
+              </div>
+              <div class="AllInfo p-2">
+                <div class="infoCard">
+                  <h5>{{ Cardd.name }}</h5>
+                  <span class="text-truncate text-secondary p-0 mb-1">{{ Cardd.createdAt | date:'EEE MMMM dd yyyy' }}</span>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+      
+    </div>
+   
+  </div>

@@ -9,7 +9,7 @@ import { FooterComponent } from '../../layout/footer/footer/footer.component';
 
 @Component({
   selector: 'app-home',
-  imports: [SliderHeaderComponent,SliderCategoryComponent,CardProductComponent,FooterComponent],
+  imports: [SliderHeaderComponent,SliderCategoryComponent,CardProductComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
