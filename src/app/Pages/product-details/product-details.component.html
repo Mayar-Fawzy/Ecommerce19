@@ -1,1 +1,41 @@
-<p>product-details works!</p>
+<div class="container DetailsPage">
+    <div class="row m-0 p-0">
+        <div class="col-md-5">
+
+            <div class="DetailsPage">
+            
+                <header
+                class="ImgCover w-100"
+                [ngStyle]="{
+                  'background-image': 'url(' + imageUrl + ')'
+                }"
+              > </header>
+              <div class="container" >
+                <owl-carousel-o [options]="customOptions">
+               
+                      <ng-container *ngFor="let image of specificProduct.images">
+                          <ng-template carouselSlide>
+                            <img 
+                              [src]="image" class=" slidess "
+                             
+                              (click)="changeBackground(image)"
+                              alt="Product Image" 
+                            />
+                         
+                          </ng-template>
+                        </ng-container>
+                  
+                  
+                </owl-carousel-o>
+          
+          </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+            <div class="AllInfo">
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium iusto ut provident. Obcaecati a ullam libero unde, laboriosam voluptatum officiis maiores aperiam quas illo neque et voluptatem quo consequatur repellat.</P>
+            </div>Info
+        </div>
+    </div>
+</div>
+
