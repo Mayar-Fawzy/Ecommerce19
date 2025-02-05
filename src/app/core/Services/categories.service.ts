@@ -15,6 +15,9 @@ export class CategoriesService  {
     return this.http.get(`${this.apiUrl}categories`)
 
   }
+  getProductOfCategoury(categoryId?:string):Observable<any>{
+    return this.http.get(`${this.apiUrl}products?category[in]=${categoryId}`)
+  }
   getCategoriesById(id:string):Observable<any>{
     return this.http.get(`${this.apiUrl}categories/${id}`)
   }

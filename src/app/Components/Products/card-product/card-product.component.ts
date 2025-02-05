@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ICardProducts } from '../../../core/interfaces/card-products';
+import {  ICardProducts } from '../../../core/interfaces/card-products';
 import { CurrencyPipe } from '@angular/common';
 import { RoutingModule } from '../../../core/Shared/Module/routing/routing.module';
 import { CutPipe } from '../../../core/Pipes/cut.pipe';
@@ -12,8 +12,8 @@ import { CutPipe } from '../../../core/Pipes/cut.pipe';
 })
 export class CardProductComponent{
   constructor(){}
+  
 
-  @Input() CardProducts: ICardProducts[]=[] ;
-  
-  
+  @Input() CardProducts: ICardProducts []=[];
+ 
 }

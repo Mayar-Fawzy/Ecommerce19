@@ -3,6 +3,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CategoriesService } from '../../../core/Services/categories.service';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { RoutingModule } from '../../../core/Shared/Module/routing/routing.module';
+import { ICategouryIbrands } from '../../../core/interfaces/ICategouryIbrands';
 
 @Component({
   selector: 'app-slider-category',
@@ -11,7 +12,8 @@ import { RoutingModule } from '../../../core/Shared/Module/routing/routing.modul
   styleUrl: './slider-category.component.scss'
 })
 export class SliderCategoryComponent implements OnInit {
-   categories:any[] = [];
+[x: string]: any;
+   categories:ICategouryIbrands[] = [];
      private readonly _CategoriesService=inject(CategoriesService);
 
   ngOnInit(): void {

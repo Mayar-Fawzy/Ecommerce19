@@ -1,8 +1,7 @@
 
 
-import { DatePipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ICategouryIbrands } from '../../../core/interfaces/ICategouryIbrands';
+import { SpecificCategoury } from '../../../core/interfaces/specific-categoury';
 
 
 @Component({
@@ -13,6 +12,6 @@ import { ICategouryIbrands } from '../../../core/interfaces/ICategouryIbrands';
 })
 export class HeaderTypeProductComponent {
   
-  @Input() CardCategouryDetHeader: ICategouryIbrands | null = null;
+  @Input() CardCategouryDetHeader: SpecificCategoury ={} as SpecificCategoury;
    
 }

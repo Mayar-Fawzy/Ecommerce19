@@ -3,7 +3,7 @@
   <owl-carousel-o [options]="customOptions">
     @for( Cat of categories ;track Cat._id){
     <ng-container>
-      <ng-template carouselSlide [id]="Cat.id" >
+      <ng-template carouselSlide [id]="Cat._id" >
         <div class="card" [routerLink]="['/CategoriesProducts', Cat._id]">
           <img [src]="Cat.image" class="OwlImgge"  />
         

@@ -1,3 +1,4 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
@@ -7,8 +8,10 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
   styleUrl: './slider-header.component.scss',
 })
 export class SliderHeaderComponent {
+ 
+  
   customOptions: OwlOptions = {
-    loop: true,
+    loop: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
@@ -17,6 +20,8 @@ export class SliderHeaderComponent {
     autoplayHoverPause: true,
     dots: true,
     navSpeed: 700,
-    items:1
+    items:1,
+    nav:false
+
   };
 }

@@ -14,9 +14,10 @@ export class ProductsService  {
     apiUrl:string=`${Environment.baseUrl}${Environment.VersionUrl}`
   
   getAllProducts(limit:number,page:number,brand?:string,category?:string,price?:number):Observable<any>{
-    return this.http.get(`${this.apiUrl}products?limit=${limit}&page=${page}`)
+    return this.http.get(`${this.apiUrl}products/?limit=${limit}&page=${page}`)
 
   }
+
   getProductById(id:string):Observable<any>{
     return this.http.get(`${this.apiUrl}products/${id}`)
   }

@@ -17,4 +17,10 @@ export class BrandsService{
    getbrandsById(id:string):Observable<any>{
      return this.http.get(`${this.apiUrl}brands/${id}`)
    }
+   getProductOfbrand(brandId?:string):Observable<any>{
+    return this.http.get(`${this.apiUrl}products?brand[in]=${brandId}`)
+  }
+  getCategoriesById(id:string):Observable<any>{
+    return this.http.get(`${this.apiUrl}categories/${id}`)
+  }
   }

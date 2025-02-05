@@ -20,7 +20,7 @@ export class HomeComponent {
 ngOnInit(): void {
 this. _ProductsService.getAllProducts(10,2).subscribe((res)=>{
      this.ProductList=res.data;
-     console.log(this.ProductList[0].category.name)
+     console.log(this.ProductList)
     
 })
 }

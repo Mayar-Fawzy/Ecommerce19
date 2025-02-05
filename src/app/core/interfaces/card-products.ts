@@ -17,7 +17,14 @@ export interface ICardProducts {
     updatedAt: string
     id: string
   }
-  
+  export interface IshredCardProduct{
+    _id: string
+    title: string
+    category: Category
+    price: number
+    ratingsAverage: number
+    imageCover: string
+  }
   export interface Subcategory {
     _id: string
     name: string
