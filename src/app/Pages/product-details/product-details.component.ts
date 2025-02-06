@@ -3,12 +3,13 @@ import { ISpecificProduct } from '../../core/interfaces/specific-product';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../../core/Services/products.service';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import { CommonModule, NgStyle } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CutPipe } from '../../core/Pipes/cut.pipe';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CarouselModule,CommonModule],
+  imports: [CarouselModule,CommonModule,CutPipe,CurrencyPipe],
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss']
 })
@@ -58,7 +59,7 @@ export class ProductDetailsComponent implements OnInit {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
-    dots: false,
+    dots: true,
     navSpeed: 700,
     navText: ['<i class="fa-solid fa-circle-arrow-left" style="color: gray; padding: 150px;"></i>', '<i class="fa-solid fa-circle-arrow-right"></i>'],
     responsive: {
@@ -77,4 +78,7 @@ export class ProductDetailsComponent implements OnInit {
     },
     
   };
+  addToCart(){
+    // this._ProductsService.addProductToCart(this.specificProduct).subscribe(
+  }
 }

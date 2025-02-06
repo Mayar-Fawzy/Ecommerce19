@@ -1,11 +1,13 @@
 .DetailsPage{
     border-radius: 20px;
     margin-top: 14px;
-    margin-bottom: 95px;
+    margin-bottom: 14px;
+    width: 90%;
+    box-shadow: var(--shadow);
 }
 .ImgCover{
     height: 480px;
-  
+    object-fit: cover !important;
     margin: 2px; padding: 4px;
 }
 .conn{
@@ -35,9 +37,55 @@ header {
   }
   
  
-  .divImage{
-    border-radius:25px ;
-    overflow: hidden;
-    margin-right: 5px;
+ 
+  .colorr{
+    color: rgb(10, 173, 10) !important;
+}
+.headerColorr {
+    color: rgba(41,52,61);
+    
+  }
+  .ShowCart{
+ 
+
+    margin-left: 40px !important;
+   
+background: #77B254!important;
+    border: none; 
+    color: white;
+    padding: 10px 50px;
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 5px;
+         &:hover{
+            color: rgba(255, 255, 255,.8);
+          }
+  }
+  .AddToCart{
+    margin-left: 3px !important;
+    border-radius: 5px;
+    border: none; 
+    color: white;
+   
+    padding: 10px 50px;
+    font-size: 16px; 
+    cursor: pointer;
+    background-color: var(--main-color) !important;
+    &:hover{
+      color: rgba(255, 255, 255,.8);
+    }
+  }
+ .DivImages{
+    height: 80%; width: 90%;
+    border-radius:25px ; 
+ }
+ .PriceAndStar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .star {
+    color: var(--rating-color);
+    font-size: 29px;
   }
   
