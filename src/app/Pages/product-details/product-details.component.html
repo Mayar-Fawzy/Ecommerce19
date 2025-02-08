@@ -27,7 +27,7 @@
     <div class="col-md-5">
       <div class="AllInfo px-2 py-1">
         <h2 class="text-h3 fs-2 fw-semibold mt-3 headerColorr py-4">
-          {{ specificProduct.title | cut : 3 }}
+          {{ specificProduct.title | cut:2 }}
         </h2>
         <div class="categoyry my-2">
           <h4 class="d-inline fw-bold colorr">Category Name:</h4>
@@ -38,7 +38,7 @@
           <span class="h5 mx-2">{{ specificProduct.brand.name }}</span>
         </div>
         <div class="description my-4 w-75">
-          <p class="text-secondary">{{ specificProduct.description }}</p>
+          <p class="text-secondary">{{ specificProduct.description  | cut:20 }}</p>
         </div>
         <div class="price my-2">
           <h4 class="d-inline fw-bold colorr">Price</h4>
@@ -59,7 +59,7 @@
         </div>
       </div>
       <div class="bbttnn my-4">
-        <button class="AddToCart mx-2" (click)="addToCart()">
+        <button class="AddToCart mx-2" (click)="addToCart(specificProduct._id)">
           Add to Cart
         </button>
         <button class="ShowCart mx-3">Show Cart</button>

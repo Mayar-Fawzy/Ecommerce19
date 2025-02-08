@@ -3,19 +3,18 @@ import { inject, PLATFORM_ID } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 
 export const isLoginGuard: CanActivateFn = (route, state) => {
-  const _PLATFORM_ID=inject(PLATFORM_ID);
-  if(isPlatformBrowser(_PLATFORM_ID)){
+  const _PLATFORM_ID = inject(PLATFORM_ID);
+  const _Router = inject(Router); // Move this outside the condition
 
-    const _Router=inject(Router);
-    if(localStorage.getItem('token') !== null){ 
-      _Router.navigate(['/home'])
-      return false;
+  if (isPlatformBrowser(_PLATFORM_ID)) {
+    const userToken = localStorage.getItem('userToken');
+
+    if (userToken) { // Check if token exists
+      _Router.navigate(['/home']);
+      return false; // Prevent access to login/signup page
+    }
+    return true; // Allow access if not logged in
   }
-  else{return true;}
 
-}
-else{
-  return false;
-}
-  
+  return false; // Default case (server-side rendering)
 };

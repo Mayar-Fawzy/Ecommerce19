@@ -1,4 +1,4 @@
-import { Routes, CanActivateFn } from '@angular/router';
+import { Routes } from '@angular/router';
 import { HomeComponent } from './Pages/home/home.component';
 import { ProductComponent } from './Pages/product/product.component';
 import { BrandsComponent } from './Pages/brands/brands.component';
@@ -15,7 +15,6 @@ import { NotFoundComponent } from './Components/SharedComponent/not-found/not-fo
 import { ProductDetailsComponent } from './Pages/product-details/product-details.component';
 import { AuthComponent } from './Pages/Auth/auth/auth.component';
 import { WishlistComponent } from './Pages/wishlist/wishlist.component';
-import { isLoginGuard } from './core/Guards/is-login.guard';
 import { RoutesComponent } from './layout/routes/routes.component';
 
 export const routes: Routes = [
@@ -54,7 +53,7 @@ export const routes: Routes = [
       {
         path: 'auth',
         component: AuthComponent,
-        canActivate: [isLoginGuard],
+         
         children: [
           { path: '', redirectTo: 'login', pathMatch: 'full' },
           { path: 'login', title: 'Login', component: LoginComponent },

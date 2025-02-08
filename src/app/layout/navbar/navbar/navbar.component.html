@@ -1,4 +1,4 @@
-<header class="px-4 py-3 d-flex justify-content-between align-items-center shadow-sm rounded-5 m-2">
+<header class="px-4 py-3 d-flex justify-content-between align-items-center shadow-sm rounded-5 m-2 ">
   <div class="LeftSide gap-3 d-flex align-items-center">
     <div class="logo">
       <a
@@ -48,9 +48,17 @@
     </ul>
   </nav>
   <div class="rightSide d-flex align-items-center gap-3">
+    
     <div class="socialIcons d-flex  align-items-center gap-2">
-      <i routerLink="/Wishlist" routerLinkActive="ActiveIcon"  class="fa-regular fs-5 fa-heart"></i>
-      <i routerLink="/Cart" routerLinkActive="ActiveIcon" class="fa-solid fs-5 fa-cart-shopping"></i>
+   
+      <div class="Shop">
+        <span class="countt text-center">{{countt()}}</span>
+      <i routerLink="/Cart" routerLinkActive="ActiveIcon" class="fa-solid fs-5 fa-cart-shopping "></i>
+      
+      </div>
+      <div class="Heart">
+        <span class="counttH text-center">1</span> 
+        <i routerLink="/Wishlist" routerLinkActive="ActiveIcon"  class="fa-regular fs-5 fa-heart"></i>
     </div>
     <div class="PersonalData">
       <div class="avatarr" (click)="toggleShow()">
@@ -89,5 +97,6 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </header>

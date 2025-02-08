@@ -83,3 +83,27 @@ border-radius: 5px
   
     border-radius: 4px;
 }
+.Shop{
+    position: relative !important;
+}
+.countt{
+    position: absolute;
+    width: 18px !important; height: 22px; 
+    font-size: 17px;
+    border-radius: 50%;
+    color:white ; 
+     top: -12px; left: 14px;
+    background-color: var(--main-color);
+}
+.Heart{
+    position: relative !important;
+}
+.counttH{
+    position: absolute;
+    width: 18px !important; height: 22px; 
+    font-size: 17px;
+    border-radius: 50%;
+    color:white ; 
+     top: -12px; left: 14px;
+    background-color: var(--error);
+}

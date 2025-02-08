@@ -3,12 +3,14 @@ import { provideRouter, withInMemoryScrolling, withViewTransitions } from '@angu
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { headersInterceptor } from './core/interceptors/headers.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
-    provideHttpClient(withFetch()) ,
+    provideHttpClient(withFetch(),
+    withInterceptors([headersInterceptor])) ,
     provideAnimations(),
     provideRouter(routes,
       withInMemoryScrolling({ scrollPositionRestoration: 'top' })),]
