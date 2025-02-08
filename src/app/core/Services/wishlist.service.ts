@@ -9,10 +9,17 @@ import { Environment } from '../../Environments/Environment';
 export class WishlistService {
    private readonly _HttpClient=inject(HttpClient)
     
-   wishlistNumber:WritableSignal<number>=signal(0);
+   wishlistNumber = signal(0); 
+
+   addNumToWishlist() {
+     this.wishlistNumber.set(this.wishlistNumber() + 1); 
+   }
   constructor() { }
 
   Addproducttowishlist(id:string):Observable<any>{
+
+
+    
        return this._HttpClient.post(`${Environment.baseUrl}/api/v1/wishlist`,
         {
           // body
@@ -20,6 +27,7 @@ export class WishlistService {
         }
        
        )
+
         }
         DeleteItem(id:string):Observable<any>{
           return this._HttpClient.delete(`${Environment.baseUrl}/api/v1/wishlist/${id}`)

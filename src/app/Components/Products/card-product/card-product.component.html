@@ -5,8 +5,11 @@
     <div class="cardProduct">
       <div class="ChildDiv">
         <div class="iconss badge">
-          <i  [routerLink]="['/ProductDetailes', Cardd._id]" class="fa-solid fa-eye fs-4 eye"></i>
-          <i class="fa-regular fa-heart fs-4 heart"></i>
+          <i [routerLink]="['/ProductDetailes', Cardd._id]" class="fa-solid fa-eye fs-4 eye"></i>
+       
+            <i  (click)="addToWishList(Cardd._id)" class="fa-regular fa-heart fs-4 heart"></i>
+      
+       
         </div>
       </div>
       <div class="ShopCircle">
