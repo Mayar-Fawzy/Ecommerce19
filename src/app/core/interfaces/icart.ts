@@ -1,12 +1,5 @@
 
-export interface ICart {
-    status: string
-    numOfCartItems: number
-    cartId: string
-    data: Data
-  }
-  
-  export interface Data {
+export interface Icart {
     _id: string
     cartOwner: string
     products: Product[]

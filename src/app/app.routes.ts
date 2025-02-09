@@ -16,6 +16,7 @@ import { ProductDetailsComponent } from './Pages/product-details/product-details
 import { AuthComponent } from './Pages/Auth/auth/auth.component';
 import { WishlistComponent } from './Pages/wishlist/wishlist.component';
 import { RoutesComponent } from './layout/routes/routes.component';
+import { ShowOrderComponent } from './Components/PersonalComponent/show-order/show-order.component';
 
 export const routes: Routes = [
   {
@@ -50,6 +51,7 @@ export const routes: Routes = [
       { path: 'Cart', title: 'Cart', component: CartComponent },
       { path: 'Personal', title: 'Personal', component: PersonalComponent },
       { path: 'Wishlist', title: 'Wishlist', component: WishlistComponent },
+      {path:'orders',title:'order',component:ShowOrderComponent},
       {
         path: 'auth',
         component: AuthComponent,
