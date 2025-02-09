@@ -25,13 +25,26 @@ export class CartComponent {
     })
   }
   RemoveAll(){
-
+    this._CartService.RemoveAll().subscribe((res)=>{
+     
+      this._CartService.countNumber.set(res.numOfCartItems);
+      if(res.message=='success'){
+        this.ProductsInCart={}as Icart
+        this._CartService.countNumber.set(0);
+        }
+    })
   }
   Remove(id:string){
-
+    this._CartService.DeleteItem(id).subscribe((res)=>{
+      this.ProductsInCart=res.data;
+      this._CartService.countNumber.set(res.numOfCartItems);
+      console.log(this.ProductsInCart);
+    })
   }
-  UpdateCount(t:string,s:number){
-
+  UpdateCount(id:string , MaxCount:number){
+    this._CartService.QuantityForCount(id,MaxCount).subscribe(({data})=>{
+      this.ProductsInCart=data;
+    })
   }
 
 }

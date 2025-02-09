@@ -51,7 +51,7 @@ export const routes: Routes = [
       { path: 'Cart', title: 'Cart', component: CartComponent },
       { path: 'Personal', title: 'Personal', component: PersonalComponent },
       { path: 'Wishlist', title: 'Wishlist', component: WishlistComponent },
-      {path:'orders',title:'order',component:ShowOrderComponent},
+      {path:'orders/:orderId',title:'order',component:ShowOrderComponent},
       {
         path: 'auth',
         component: AuthComponent,
