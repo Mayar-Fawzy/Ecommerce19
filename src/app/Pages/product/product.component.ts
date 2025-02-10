@@ -18,10 +18,12 @@ ProductList:ICardProducts[]=[];
   private readonly _ProductsService=inject(ProductsService);
 
 ngOnInit(): void {
-this. _ProductsService.getAllProducts(12,this.page).subscribe((res)=>{
-  this.isloading=false
-     this.ProductList=res.data;
 
+
+  this. _ProductsService.getAllProducts(12,this.page).subscribe((res)=>{
+   
+    this.ProductList=res.data;
+     this.isloading=false
 })
 }
 onPageChange(page: number): void {
