@@ -1,6 +1,14 @@
 <div class="container">
-    <h2 class="text-center py-2">All Categories</h2>
-    <app-card-category [CardCategoury]="CategourisList"></app-card-category>
-    </div>
-    
+    <h2 class="text-center fw-bold py-2">Categories</h2>
    
+   
+    @if(isloading==true){
+        <div class="text-center">
+          <div class="loader"></div>
+        </div>
+        } 
+        
+        @else{
+            <app-card-category [CardCategoury]="CategourisList"></app-card-category>
+        }
+    </div>

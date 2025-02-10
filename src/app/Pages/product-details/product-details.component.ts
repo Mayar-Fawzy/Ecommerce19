@@ -2,8 +2,7 @@ import {
   Component,
   inject,
   OnInit,
-  signal,
-  WritableSignal,
+  
 } from '@angular/core';
 import { ISpecificProduct } from '../../core/interfaces/specific-product';
 import { ActivatedRoute } from '@angular/router';
@@ -12,11 +11,12 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { CutPipe } from '../../core/Pipes/cut.pipe';
 import { CartService } from '../../core/Services/cart.service';
+import { RoutingModule } from '../../core/Shared/Module/routing/routing.module';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CarouselModule, CommonModule, CutPipe, CurrencyPipe],
+  imports: [CarouselModule, CommonModule, CutPipe, CurrencyPipe,RoutingModule],
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss'],
 })
@@ -105,5 +105,6 @@ export class ProductDetailsComponent implements OnInit {
         console.log(err);
       },
     });
-  }
-}
+
+}  }
+ 

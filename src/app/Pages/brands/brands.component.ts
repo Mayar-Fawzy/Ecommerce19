@@ -7,15 +7,17 @@ import { CardBrandsComponent } from "../../Components/card-brands/card-brands.co
   selector: 'app-brands',
   imports: [ CardBrandsComponent],
   templateUrl: './brands.component.html',
-  styleUrl: './brands.component.scss',
+  styleUrls: [ '../../core/Shared/Css/SharedStylee.css','./brands.component.scss'],
 })
 export class BrandsComponent {
+  isloading:boolean=true
   BrandList: ICategouryIbrands[] = [];
   private readonly _BrandsService = inject(BrandsService);
 
   ngOnInit(): void {
     this._BrandsService.getAllbrands().subscribe((res) => {
       this.BrandList = res.data;
+      this.isloading=false
     });
   }
 }

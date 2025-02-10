@@ -2,6 +2,9 @@
   <div class="d-flex justify-content-between">
     <div class="">
       <h1 class="h2 fw-bold colorr">Shop Cart</h1>
+     
+     
+    
       <h4 class="h5 my-2 py-2 fw-bold">
         Total Cart Price:
         {{
@@ -10,57 +13,67 @@
       </h4>
     </div>
 
-    <div class="">
+  <div class="">
+    
       <button class="Delete" (click)="RemoveAll()">Clear All</button>
-    </div>
+  </div>
+    
   </div>
   <div class="my-3">
-    @for (item of ProductsInCart.products; track item.product.id) {
-    <div class="row justify-content-between mb-1 border-bottom">
-      <!-- Image -->
-      <div class="col-md-1">
-        <img
-          [src]="item.product.imageCover"
-          class="w-100 h-100"
-          [alt]="item.product.title"
-        />
-      </div>
-
-      <!-- Product Info -->
-
-      <div class="col-md-3 my-2">
-        <h4 class="colorr">{{ item.product.title | cut : 2 }}</h4>
-
-        <p class="fw-bolder m-0">
-          Price: {{ item.price | currency : "USD" : "symbol" : "1.0" }}
-        </p>
-      </div>
-
-      <div class="col-md-2 my-4">
-        <div class="d-flex align-items-center gap-2">
-          <span
-            (click)="UpdateCount(item.product.id, item.count + 1)"
-            class="text-main cr"
-          >
-            <i class="fa-solid fa-circle-plus fa-2xl"></i>
-          </span>
-          <span class="fw-bold">{{ item.count }}</span>
-          <span
-            (click)="UpdateCount(item.product.id, item.count - 1)"
-            class="text-main cr"
-          >
-            <i class="fa-solid fa-circle-minus fa-2xl"></i>
-          </span>
+    
+    @if(isloading==true){
+      <div class="text-center">
+          <div class="loader"></div>
         </div>
-      </div>
-      <div class="my-3 col-md-2">
-        <button (click)="Remove(item.product.id)" class="delete">
-          <div class="fw-bold">Delete <i class="fa-solid fa-trash"></i></div>
-        </button>
-      </div>
-    </div>
-
-    }
+      }
+        @for (item of ProductsInCart.products; track item.product.id) {
+          <div class="row justify-content-between mb-1 border-bottom">
+            <!-- Image -->
+            <div class="col-md-1">
+              <img
+                [src]="item.product.imageCover"
+                class="w-100 h-100"
+                [alt]="item.product.title"
+              />
+            </div>
+      
+            <!-- Product Info -->
+      
+            <div class="col-md-3 my-2">
+              <h4 class="colorr">{{ item.product.title | cut : 2 }}</h4>
+      
+              <p class="fw-bolder m-0">
+                Price: {{ item.price | currency : "USD" : "symbol" : "1.0" }}
+              </p>
+            </div>
+      
+            <div class="col-md-2 my-4">
+              <div class="d-flex align-items-center gap-2">
+                <span
+                  (click)="UpdateCount(item.product.id, item.count + 1)"
+                  class="text-main cr"
+                >
+                  <i class="fa-solid fa-circle-plus fa-2xl"></i>
+                </span>
+                <span class="fw-bold">{{ item.count }}</span>
+                <span
+                  (click)="UpdateCount(item.product.id, item.count - 1)"
+                  class="text-main cr"
+                >
+                  <i class="fa-solid fa-circle-minus fa-2xl"></i>
+                </span>
+              </div>
+            </div>
+            <div class="my-3 col-md-2">
+              <button (click)="Remove(item.product.id)" class="delete">
+                <div class="fw-bold">Delete <i class="fa-solid fa-trash"></i></div>
+              </button>
+            </div>
+          </div>
+      
+          }
+   
+  
   </div>
 
   <div class="center">
@@ -68,4 +81,5 @@
       Order
     </button>
   </div>
+
 </section>

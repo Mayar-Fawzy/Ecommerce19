@@ -8,17 +8,18 @@ import { CardProductComponent } from '../../Components/Products/card-product/car
   selector: 'app-product',
   imports: [CardProductComponent,NzPaginationModule],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.scss'
+  styleUrls: [ '../../core/Shared/Css/SharedStylee.css','./product.component.scss']
 })
 export class ProductComponent {
 
   page:number=1
-  
+  isloading:boolean=true
 ProductList:ICardProducts[]=[];
   private readonly _ProductsService=inject(ProductsService);
 
 ngOnInit(): void {
 this. _ProductsService.getAllProducts(12,this.page).subscribe((res)=>{
+  this.isloading=false
      this.ProductList=res.data;
 
 })

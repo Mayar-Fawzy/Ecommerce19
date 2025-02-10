@@ -1,10 +1,20 @@
-<div class="container">
-    
-<app-card-product [CardProducts]="ProductList"></app-card-product>
-</div>
 
-<div class="d-flex align-items-center justify-content-center pb-5">
-   
-    <nz-pagination [nzPageIndex]="page" [nzTotal]="50"  (nzPageIndexChange)="onPageChange($event)"></nz-pagination>
-    
+<h2 class="text-center fw-bolder my-4">Products</h2>
+
+@if(isloading==true){
+<div class="text-center">
+  <div class="loader"></div>
 </div>
+} @else{
+
+<div class="container">
+  <app-card-product [CardProducts]="ProductList"></app-card-product>
+</div>
+<div class="d-flex align-items-center justify-content-center pb-5">
+  <nz-pagination
+    [nzPageIndex]="page"
+    [nzTotal]="50"
+    (nzPageIndexChange)="onPageChange($event)"
+  ></nz-pagination>
+</div>
+}

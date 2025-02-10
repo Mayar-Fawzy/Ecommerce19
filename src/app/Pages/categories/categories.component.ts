@@ -13,10 +13,10 @@ import { CommonModule } from '@angular/common';
   standalone: true, // إذا كنت تستخدم Angular 17+ مع standalone components
   imports: [CardCategoryComponent, CommonModule], // تأكد من استيراد الوحدات المطلوبة
   templateUrl: './categories.component.html',
-  styleUrl: './categories.component.scss',
+  styleUrls: [ '../../core/Shared/Css/SharedStylee.css','./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
- 
+  isloading:boolean=true
   CategourisList: ICategouryIbrands[] = [];
   private readonly _CategoriesService = inject(CategoriesService);
    
@@ -27,6 +27,7 @@ export class CategoriesComponent implements OnInit {
     this._CategoriesService.getAllCategories().subscribe({
       next: (res) => {
         this.CategourisList = res.data;
+        this.isloading=false
       },
       error: (err) => {
         console.error('Error fetching all categories:', err);
