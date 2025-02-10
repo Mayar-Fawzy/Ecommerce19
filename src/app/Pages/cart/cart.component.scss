@@ -1,0 +1,56 @@
+.cr{
+    color: var(--main-color);
+}
+.OrderButton{
+    margin-top: 8px !important;
+    border-radius: 5px;
+    border: none; 
+    color: white;
+   
+    padding: 10px 50px;
+    font-size: 16px; 
+    cursor: pointer;
+    background-color: var(--main-color) !important;
+    &:hover{
+      color: rgba(255, 255, 255,.8);
+    }
+  }
+  .center{
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+  }
+  .Delete{
+    
+        margin-top: 20px !important;
+        border-radius: 5px;
+        border: none; 
+        color: white;
+       
+        padding: 6px 10px;
+        font-size: 16px; 
+        cursor: pointer;
+        background-color: rgb(188, 60, 60) !important;
+        &:hover{
+          color: rgba(255, 255, 255,.8);
+        }
+      
+  }
+  .colorr{
+    color: rgb(10, 173, 10) !important;
+}
+.delete{
+   
+    border-radius: 5px;
+    border: none; 
+    color: white;
+   
+    padding: 9px 10px;
+    font-size: 16px; 
+    cursor: pointer;
+    background-color: rgb(188, 60, 60) !important;
+    &:hover{
+      color: rgba(255, 255, 255,.8);
+    }
+  
+}

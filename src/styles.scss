@@ -7,7 +7,9 @@
 a{
     text-decoration: none;
     color:var(--defultColor);
-
+ &:hover{
+    color: var(--main-color) !important;
+ }
     
 }
 :root{

@@ -4,10 +4,11 @@ import { CartService } from '../../core/Services/cart.service';
 import { Icart } from '../../core/interfaces/icart';
 import { RoutingModule } from '../../core/Shared/Module/routing/routing.module';
 import { CurrencyPipe } from '@angular/common';
+import { CutPipe } from "../../core/Pipes/cut.pipe";
 
 @Component({
   selector: 'app-cart',
-  imports: [RoutingModule,CurrencyPipe],
+  imports: [RoutingModule, CurrencyPipe, CutPipe],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
 })
