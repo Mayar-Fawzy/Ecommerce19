@@ -1,18 +1,18 @@
-<section class="bg-main-light rounded-4 shadow p-2 my-2 w-75 mx-auto">
-    <h1 class="text-center colorr fw-bolder">Shipping Address</h1>
+<section class="bg-main-light rounded-4 shadow p-2 my-2 w-75 mx-auto ">
+    <h1 class="text-center colorr fw-bolder my-3">Shipping Address</h1>
     <form [formGroup]="orders" (ngSubmit)="ordersSubmit()">
-      <div class="my-1">
-        <label for="details">Details</label>
+      <div class="my-3">
+        <label for="details" class="fw-bolder">Details</label>
         <textarea formControlName="details" id="details" class="form-control"></textarea>
       </div>
   
-      <div class="my-1">
-        <label for="phone">Phone</label>
+      <div class="my-3">
+        <label for="phone" class="fw-bolder">Phone</label>
         <input formControlName="phone" id="phone" type="tel" class="form-control">
       </div>
   
-      <div class="my-1">
-        <label for="city">City</label>
+      <div class="my-4">
+        <label for="city" class="fw-bolder">City</label>
         <input formControlName="city" id="city" type="text" class="form-control">
       </div>
        <div class="center">

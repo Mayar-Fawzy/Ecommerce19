@@ -19,7 +19,6 @@ export class ShowOrderComponent {
    })
   //جبت الديتلز بتاعت الكارت
    ordersSubmit():void{
-    console.log(this.orders.value);
      this._OrdersService.CheckOut(this.myId,this.orders.value).subscribe({
        next: (res) => {
          if(res.status=='success'){
@@ -30,6 +29,7 @@ export class ShowOrderComponent {
        },
        error: (err) => console.error(err),
      })
+     console.log(this.orders.value);
    }
  
     myId:string|null='';
