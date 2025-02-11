@@ -1,12 +1,46 @@
-
 <h2 class="text-center fw-bolder my-4">Product</h2>
 
-@if(isloading==true){
-<div class="text-center">
-  <div class="loader"></div>
+@if (isloading) {
+<div class="container">
+  <div class="row">
+    @for (_ of [1,2,3,4,5,6,7,8,9,10,11,12]; track $index) {
+    <div class="col-md-3 mb-4 ">
+      <ngx-skeleton-loader
+      class="skeleton-card p-3"
+      animation="pulse"
+      appearance="custom-content"
+      [theme]="{
+        borderRadius: '10px',
+        height: '350px',
+        width: '100%'
+      }"
+    >
+      <ngx-skeleton-loader
+        class="w-100 mb-2"
+        [theme]="{ height: '200px', borderRadius: '10px' }"
+      ></ngx-skeleton-loader>
+    
+      <ngx-skeleton-loader
+        class="w-75 mb-2"
+        [theme]="{ height: '20px', borderRadius: '5px' }"
+      ></ngx-skeleton-loader>
+    
+      <ngx-skeleton-loader
+        class="w-50 mb-3"
+        [theme]="{ height: '20px', borderRadius: '5px' }"
+      ></ngx-skeleton-loader>
+    
+      <ngx-skeleton-loader
+        class="w-100"
+        [theme]="{ height: '30px', borderRadius: '10px' }"
+      ></ngx-skeleton-loader>
+    </ngx-skeleton-loader>
+    
+    </div>
+    }
+  </div>
 </div>
-} @else{
-
+} @else {
 <div class="container">
   <app-card-product [CardProducts]="ProductList"></app-card-product>
 </div>

@@ -4,18 +4,19 @@
     <div class="cardProduct">
       <div class="ChildDiv">
         <div class="iconss badge">
-          <i [routerLink]="['/ProductDetailes', Cardd._id]" class="fa-solid fa-eye fs-4 eye"></i>
-       
-            <i  (click)="addToWishList(Cardd._id)" class="fa-regular fa-heart fs-4 heart"></i>
-      
-       
+          <i
+            [routerLink]="['/ProductDetailes', Cardd._id]"
+            class="fa-solid fa-eye fs-4 eye"
+          ></i>
+
+          <i
+            (click)="addToWishList(Cardd._id)"
+            class="fa-regular fa-heart fs-4 heart"
+          ></i>
         </div>
       </div>
       <div class="ShopCircle">
-        <i
-         
-          class="fa-solid fa-cart-shopping fs-3 p-2 shopping"
-        ></i>
+        <i class="fa-solid fa-cart-shopping fs-3 p-2 shopping"></i>
       </div>
       <div class="AllCardInfo">
         <div>

@@ -4,17 +4,16 @@ import { CurrencyPipe } from '@angular/common';
 import { RoutingModule } from '../../../core/Shared/Module/routing/routing.module';
 import { CutPipe } from '../../../core/Pipes/cut.pipe';
 import { WishlistService } from '../../../core/Services/wishlist.service';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 @Component({
   selector: 'app-card-product',
-  imports: [CurrencyPipe, RoutingModule,CutPipe,NgxSkeletonLoaderModule],
+  imports: [CurrencyPipe, RoutingModule,CutPipe],
   templateUrl: './card-product.component.html',
   styleUrl: './card-product.component.scss'
 })
 export class CardProductComponent{
   @Input() CardProducts: ICardProducts []=[];
-  @Input() isloadingg=true;
-  isloading:boolean=true
+
+
  
   private readonly _WishlistService=inject(WishlistService);
 

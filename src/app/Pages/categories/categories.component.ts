@@ -5,13 +5,14 @@ import { ICategouryIbrands } from '../../core/interfaces/ICategouryIbrands';
 import { CategoriesService } from '../../core/Services/categories.service';
 import { BrandsComponent } from '../brands/brands.component';
 import { CardCategoryComponent } from '../../Components/card-category/card-category.component';
-import { ActivatedRoute } from '@angular/router';
+
 import { CommonModule } from '@angular/common';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @Component({
   selector: 'app-categories',
-  standalone: true, // إذا كنت تستخدم Angular 17+ مع standalone components
-  imports: [CardCategoryComponent, CommonModule], // تأكد من استيراد الوحدات المطلوبة
+  standalone: true,
+  imports: [CardCategoryComponent, CommonModule,NgxSkeletonLoaderModule],
   templateUrl: './categories.component.html',
   styleUrls: [ '../../core/Shared/Css/SharedStylee.css','./categories.component.scss']
 })

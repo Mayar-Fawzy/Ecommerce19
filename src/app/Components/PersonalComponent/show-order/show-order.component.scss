@@ -1,0 +1,22 @@
+.OrderButton{
+    margin-top: 8px !important;
+    border-radius: 5px;
+    border: none; 
+    color: white;
+   
+    padding: 10px 50px;
+    font-size: 16px; 
+    cursor: pointer;
+    background-color: var(--main-color) !important;
+    &:hover{
+      color: rgba(255, 255, 255,.8);
+    }
+  }
+  .center{
+    display: flex ;
+    justify-content: center ;
+    align-items: center ;
+  }
+  .colorr{
+    color: rgb(10, 173, 10) !important;
+}

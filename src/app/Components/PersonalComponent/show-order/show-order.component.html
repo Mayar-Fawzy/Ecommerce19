@@ -1,1 +1,24 @@
-<p>show-order works!</p>
+<section class="bg-main-light rounded-4 shadow p-2 my-2 w-75 mx-auto">
+    <h1 class="text-center colorr fw-bolder">Shipping Address</h1>
+    <form [formGroup]="orders" (ngSubmit)="ordersSubmit()">
+      <div class="my-1">
+        <label for="details">Details</label>
+        <textarea formControlName="details" id="details" class="form-control"></textarea>
+      </div>
+  
+      <div class="my-1">
+        <label for="phone">Phone</label>
+        <input formControlName="phone" id="phone" type="tel" class="form-control">
+      </div>
+  
+      <div class="my-1">
+        <label for="city">City</label>
+        <input formControlName="city" id="city" type="text" class="form-control">
+      </div>
+       <div class="center">
+        <button  class="OrderButton" type="submit">Check Out</button>
+       </div>
+    
+    </form>
+  </section>
+  
