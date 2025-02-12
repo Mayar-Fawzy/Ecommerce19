@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="container">
+  <h1 class="fw-bolder py-5">Login in</h1>
+  <div class="email" class="Divemail my-3 py-1">
+    <input type="email" class="form-control" id="email" placeholder="email" />
+  </div>
+
+  <div class="password" class="DivPass my-3 py-2">
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      placeholder="password"
+    />
+  </div>
+  <span class="forget fw-bold">Forget Password?</span>
+
+  <div class="center my-2 pb-5">
+    <P
+      [routerLink]="['/auth/Register']"
+      class="pt-5 mx-2 active"
+      >Create Account?</P
+    >
+    <button class="OrderButton" type="submit">Login</button>
+  </div>
+</div>

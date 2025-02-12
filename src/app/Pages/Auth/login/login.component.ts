@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RoutingModule } from '../../../core/Shared/Module/routing/routing.module';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  imports: [RoutingModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
