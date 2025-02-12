@@ -23,8 +23,9 @@ export class CartComponent {
   }
   ShowProductsInCart() {
     this._CartService.GetProductsCart().subscribe(({ data }) => {
-      this.ProductsInCart = data;
       this.isloading = false;
+      this.ProductsInCart = data;
+     
       console.log(this.ProductsInCart);
     });
   }

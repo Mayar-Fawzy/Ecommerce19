@@ -57,7 +57,11 @@
       
       </div>
       <div class="Heart">
-        <span class="counttH text-center">{{WishListNum()}}</span> 
+        <span class=" text-center">
+          
+          <!-- {{WishListNum()}} -->
+        
+        </span> 
         <i routerLink="/Wishlist" routerLinkActive="ActiveIcon"  class="fa-regular fs-5 fa-heart"></i>
     </div>
     <div class="PersonalData">
@@ -73,8 +77,8 @@
           </div>
 
           <div class="infoFrontofPhoto">
-            <h5>Username</h5>
-            <p>email</p>
+            <h5>{{userName}}</h5>
+            <p>{{userEmail}}</p>
           </div>
         </div>
         <hr />
