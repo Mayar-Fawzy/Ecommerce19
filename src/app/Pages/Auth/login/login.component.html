@@ -1,71 +1,67 @@
-<div class="container">
-  <h1 class="fw-bolder py-5">Login in</h1>
+<div class="container rounded-4 shadow p-3  mb-3 py-4  my-5">
+  <h1 class="fw-bolder  center ">Login in</h1>
   <form [formGroup]="loginform" (ngSubmit)="Login()">
     <div class="email" class="Divemail my-3 py-1">
-      
-        <input
-          type="email"
-          formControlName="email"
-          
-          class="form-control"
-          id="email"
-          [ngClass]="{
-            'is-invalid': CheckFieldInvalid('email'),
-            'is-valid':  CheckFieldValid('email')
-          }"
-          placeholder="email"
-        />
-
-        <div class="text-danger mt-1">
-          @if(loginform.get('email')?.errors?.['required']){
-          <p>email is required</p>
-          } @else if (loginform.get('email')?.errors?.['email']) {
-          <p>Invalid email</p>
-          }
-          @else {}
-        </div>
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control"
+        id="email"
+        [ngClass]="{
+          'is-invalid': CheckFieldInvalid('email'),
+          'is-valid': CheckFieldValid('email')
+        }"
+        placeholder="email"
+      />
+      @if(loginform.get('email')?.errors&&loginform.get('email')?.touched){
+      <div class="text-danger mt-1">
+        @if(loginform.get('email')?.getError('required')){
+        <p>email is required</p>
+        } @else if (loginform.get('email')?.errors?.['email']) {
+        <p>Invalid email</p>
+        } @else {}
       </div>
-    
+      }
+    </div>
+
     <div class="password" class="DivPass my-3 py-2">
       <input
-      type="password"
-      formControlName="password"
-      
-      class="form-control"
-      id="password"
-      autocomplete="current-password"
-      [ngClass]="{
-        'is-invalid': CheckFieldInvalid('password'),
-        'is-valid':  CheckFieldValid('password')
-      }"
-      placeholder="password"
-    />
-    <div class="text-danger mt-1">
-      @if(loginform.get('password')?.errors?.['required']){
-      <p>password is required</p>
-      } @else if (loginform.get('password')?.errors?.['pattern']) {
-      <p>password 6 chars Start with Capital Letter Then num </p>
+        type="password"
+        formControlName="password"
+        class="form-control"
+        id="password"
+        autocomplete="current-password"
+        [ngClass]="{
+          'is-invalid': CheckFieldInvalid('password'),
+          'is-valid': CheckFieldValid('password')
+        }"
+        placeholder="password"
+      />
+      @if(loginform.get('password')?.errors&&loginform.get('password')?.touched){
+      <div class="text-danger mt-1">
+        @if(loginform.get('password')?.errors?.['required']){
+        <p>password is required</p>
+        } @else if (loginform.get('password')?.errors?.['pattern']) {
+        <p>password 6 chars Start with Capital Letter Then num</p>
+        } @else {}
+      </div>
       }
-      @else {}
     </div>
-    </div>
-    <span [routerLink]="['/auth/Forgetpassword']"  class="forget fw-bold active">Forget Password?</span>
+    <span [routerLink]="['/auth/Forgetpassword']" class="forget fw-bold active"
+      >Forget Password?</span
+    >
 
-    <div class="center my-2 pb-5">
-      <P [routerLink]="['/auth/Register']" class="pt-5 mx-2 active"
-        >Create Account?</P
-      >
-     
-      <button class="OrderButton" type="submit">Login
-        @if(isloading){
-          <span>
-            <i class="fas fa-spin fa-spinner"></i>
-          </span>
-          }
-      </button>
     
+    <div class=" center center2">
+      <button type="submit" class="OrderButton">
+        Login 
+        @if(isloading){
+          <span><i class="fas fa-spin fa-spinner"></i></span>
+        }
+      </button>
+      <a routerLink="/auth/Register" class="fw-bolder cr">
+        Create Account?
+      </a>
     </div>
-
   </form>
- 
 </div>

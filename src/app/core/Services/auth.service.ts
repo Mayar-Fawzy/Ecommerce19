@@ -14,7 +14,9 @@ export class AuthService {
     return  this._HttpClient.post(`${Environment.baseUrl}/api/v1/auth/signin`,userdata)
   }
   userData = new BehaviorSubject<any>(null); // BehaviorSubject to store user data
-
+ register(userdata:any):Observable<any>{
+    return  this._HttpClient.post(`${Environment.baseUrl}/api/v1/auth/signup`,userdata)
+  }
   constructor() {
     this.saveuserdata(); // Load user data on service initialization
   }
@@ -29,6 +31,7 @@ export class AuthService {
       }
     }
   }
+ 
 
   logout() {
     localStorage.removeItem('userToken');
