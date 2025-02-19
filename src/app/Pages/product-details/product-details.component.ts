@@ -12,6 +12,8 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 import { CutPipe } from '../../core/Pipes/cut.pipe';
 import { CartService } from '../../core/Services/cart.service';
 import { RoutingModule } from '../../core/Shared/Module/routing/routing.module';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
@@ -21,9 +23,12 @@ import { RoutingModule } from '../../core/Shared/Module/routing/routing.module';
   styleUrls: ['./product-details.component.scss'],
 })
 export class ProductDetailsComponent implements OnInit {
+  msgError!: string;
   private readonly _ActivatedRoute = inject(ActivatedRoute);
+   private readonly _Router = inject(Router);
   private readonly _ProductsService = inject(ProductsService);
   private readonly _CartService = inject(CartService);
+  private readonly _ToastrService = inject(ToastrService);
   specificProduct:ISpecificProduct= {} as ISpecificProduct;
 
   productId: string | null = null;
@@ -103,6 +108,9 @@ export class ProductDetailsComponent implements OnInit {
 
       error: (err) => {
         console.log(err);
+        this.msgError = err.error.message;
+        this._ToastrService.error(this.msgError, 'FreshCart', {timeOut: 2000});
+        this._Router.navigate(['/auth/login']);
       },
     });
 

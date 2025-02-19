@@ -17,10 +17,11 @@ import { AuthComponent } from './Pages/Auth/auth/auth.component';
 import { WishlistComponent } from './Pages/wishlist/wishlist.component';
 import { RoutesComponent } from './layout/routes/routes.component';
 import { ShowOrderComponent } from './Components/PersonalComponent/show-order/show-order.component';
+import { isLoginGuard } from './core/Guards/is-login.guard';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: '', canActivate:[isLoginGuard],
     component: RoutesComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
