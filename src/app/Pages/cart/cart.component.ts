@@ -45,16 +45,17 @@ export class CartComponent {
           title: 'Deleted!',
           text: 'Your file has been deleted.',
           icon: 'success',
-        });
-      }
-    });
-    this._CartService.RemoveAll().subscribe((res) => {
+        }); 
+         this._CartService.RemoveAll().subscribe((res) => {
       this._CartService.countNumber.set(res.numOfCartItems);
       if (res.message == 'success') {
         this.ProductsInCart = {} as Icart;
         this._CartService.countNumber.set(0);
       }
     });
+      }
+    });
+  
   }
   Remove(id: string) {
     Swal.fire({
@@ -72,15 +73,16 @@ export class CartComponent {
           text: 'Your file has been deleted.',
           icon: 'success',
         });
-      }
-    });
-
+        
     this._CartService.DeleteItem(id).subscribe((res) => {
       this.ProductsInCart = res.data;
 
       this._CartService.countNumber.set(res.numOfCartItems);
       console.log(this.ProductsInCart);
     });
+      }
+    });
+
   }
   UpdateCount(id: string, MaxCount: number) {
     this._CartService.QuantityForCount(id, MaxCount).subscribe(({ data }) => {

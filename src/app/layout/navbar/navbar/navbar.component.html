@@ -48,8 +48,8 @@
     </ul>
   </nav>
   <div class="rightSide d-flex align-items-center gap-3">
-    
-    <div class="socialIcons d-flex  align-items-center gap-2">
+    @if(islogin){
+        <div class="socialIcons d-flex  align-items-center gap-2">
    
       <div class="Shop">
         <span class="countt text-center">{{countt()}}</span>
@@ -102,5 +102,29 @@
       </div>
     </div>
   </div>
+    }
+    @else{
+      <ul class="d-flex gap-3 list-unstyled m-0">
+        <li>
+          <a
+            routerLink="/auth/login"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Login</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/auth/Register"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Register</a
+          >
+        </li>
+      
+       
+      </ul>
+    }
+  
   </div>
 </header>

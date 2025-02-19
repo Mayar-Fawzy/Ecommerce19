@@ -12,6 +12,7 @@ import { AuthService } from '../../../core/Services/auth.service';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
+  islogin!:boolean;
   Show: boolean = false;
   toggleShow() {
     this.Show = !this.Show;
@@ -33,6 +34,11 @@ export class NavbarComponent {
         console.log('email' + this.userEmail);
         console.log('Name' + this.userName);
       }
+      this._AuthService.getAuthSubject().subscribe({
+        next:(status)=>{
+          this.islogin=status
+        }
+      })
      
     });
 
