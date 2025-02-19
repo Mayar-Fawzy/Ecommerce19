@@ -9,6 +9,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class LoginComponent {
   private readonly _AuthService = inject(AuthService);
+  private readonly _ToastrService = inject(ToastrService);
   private readonly _Router = inject(Router);
   msgError!: string;
   isloading: boolean = false;
@@ -25,9 +27,22 @@ export class LoginComponent {
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null, [
       Validators.required,
-     
-    ]),
+     Validators.pattern(/^[A-Z0-9a-z]{6,}/)]),
   });
+
+
+
+  CheckFieldInvalid(InputName: string): boolean {
+    const Check = this.loginform.get(InputName);
+    return Check ? Check.invalid && (Check.touched || Check.dirty) : false;
+}
+
+CheckFieldValid(InputName: string): boolean {
+    const Check = this.loginform.get(InputName);
+    return Check ? Check.valid && (Check.touched || Check.dirty) : false;
+}
+
+
   ngOnInit(): void {}
   Login() {
     if (this.loginform.valid) {
@@ -40,11 +55,14 @@ export class LoginComponent {
           localStorage.setItem('userToken', res.token);
           //2- decode token
           this._AuthService.saveuserdata();
+          //Tost Succes
+          this._ToastrService.success('Welcome', 'FreshCart', {timeOut: 3000});
           //3-navigate to home
           this._Router.navigate(['/home']);
         },
         error: (err: HttpErrorResponse) => {
           this.msgError = err.error.message;
+          this._ToastrService.error(this.msgError, 'FreshCart', {timeOut: 3000});
           console.log(this.msgError);
           this.isloading = false;
         },
@@ -54,4 +72,6 @@ export class LoginComponent {
       this.loginform.setErrors({ mismatch: true });
     }
   }
+
+ 
 }
