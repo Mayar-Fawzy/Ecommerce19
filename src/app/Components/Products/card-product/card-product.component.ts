@@ -47,7 +47,7 @@ export class CardProductComponent{
     this._CartService.addProductToCart(productId).subscribe({
       next: (data) => {
         this._CartService.countNumber.set(data.numOfCartItems);
-        this._ToastrService.success('Product added to cart', 'FreshCart', {timeOut: 3000,  toastClass: 'custom-toast'});
+        this._ToastrService.success('Product added to cart', 'FreshCart', {timeOut: 3000});
         
       },
 
