@@ -1,6 +1,15 @@
 <div class="container">
   <div class="row mb-5">
     <div class="col-md-3">
+      @if (isloadingH) 
+      {
+        <ngx-skeleton-loader
+        class="mb-1"
+        style="margin-top: 50px; width: 100px"
+        [theme]="{ height: '300px', borderRadius: '10px' }"
+      ></ngx-skeleton-loader>
+      }
+      @else {
       <div class="d-flex">
         <img
           class="w-100 CategoryImage"
@@ -9,18 +18,34 @@
         />
         <div class="bd"></div>
       </div>
+    }
     </div>
-
+     
     <div class="col-md-6 info">
-      <h3 class="d-inline fw-bold colorr"><strong>Category Name:</strong></h3>
-      <span class="h6 mx-3">{{ CardCategouryDetHeader.name }}</span>
-      <div class="pt-4">
-        <h5 class="d-inline fw-bold colorr">Date Created:</h5>
-
-        <span class="text-truncate text-secondary p-0 mb-1 mx-3">{{
-          CardCategouryDetHeader.createdAt | date : "EEE MMMM dd yyyy"
-        }}</span>
-      </div>
+      @if (isloadingH)
+       {
+        <div class="d-flex flex-column ">
+          <ngx-skeleton-loader
+            [theme]="{ height: '20px', width: '200px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+            [theme]="{ height: '20px', width: '250px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+          </div>
+       }
+       @else {
+        <h3 class="d-inline fw-bold colorr"><strong>Category Name:</strong></h3>
+        <span class="h6 mx-3">{{ CardCategouryDetHeader.name }}</span>
+        <div class="pt-4">
+          <h5 class="d-inline fw-bold colorr">Date Created:</h5>
+  
+          <span class="text-truncate text-secondary p-0 mb-1 mx-3">{{
+            CardCategouryDetHeader.createdAt | date : "EEE MMMM dd yyyy"
+          }}</span> 
+           </div>
+       }
+     
+    
     </div>
   </div>
 </div>

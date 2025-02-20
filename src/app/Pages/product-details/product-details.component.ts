@@ -14,15 +14,18 @@ import { CartService } from '../../core/Services/cart.service';
 import { RoutingModule } from '../../core/Shared/Module/routing/routing.module';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CarouselModule, CommonModule, CutPipe, CurrencyPipe,RoutingModule],
+  imports: [CarouselModule, CommonModule,NgxSkeletonLoaderModule, CutPipe, CurrencyPipe,RoutingModule],
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.scss'],
 })
 export class ProductDetailsComponent implements OnInit {
+  isloading:boolean=false
+
   msgError!: string;
   private readonly _ActivatedRoute = inject(ActivatedRoute);
    private readonly _Router = inject(Router);
@@ -44,16 +47,18 @@ export class ProductDetailsComponent implements OnInit {
       }
 
       console.log('productId ID from ngOnInit:', this.productId);
-
+   
       // Fetch product data
       this.getListProduct(this.productId);
     });
   }
 
   getListProduct(productId: string): void {
+    this.isloading=true
     this._ProductsService.getProductById(productId).subscribe({
       next: ({ data }) => {
         this.specificProduct=data;
+        this.isloading=false
            
         this.imageUrl = this.specificProduct.imageCover; 
         console.log('Fetched specificProduct Data:', this.specificProduct);

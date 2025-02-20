@@ -6,15 +6,17 @@ import { HeaderTypeProductComponent } from '../../Components/SharedComponent/hea
 import { ICardProducts } from '../../core/interfaces/card-products';
 import { CardProductComponent } from '../../Components/Products/card-product/card-product.component';
 import { SpecificCategoury } from '../../core/interfaces/specific-categoury';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @Component({
   selector: 'app-product-by-categoris',
   standalone:true,
-  imports: [HeaderTypeProductComponent,CardProductComponent],
+  imports: [HeaderTypeProductComponent,NgxSkeletonLoaderModule,CardProductComponent],
   templateUrl: './product-by-categoris.component.html',
   styleUrl: './product-by-categoris.component.scss'
 })
 export class ProductByCategorisComponent implements OnInit {
+  isloading:boolean=true;
   private readonly _CategoriesService = inject(CategoriesService);
   private readonly _ActivatedRoute = inject(ActivatedRoute);
           
@@ -45,7 +47,8 @@ export class ProductByCategorisComponent implements OnInit {
     this._CategoriesService.getProductOfCategoury(idCat).subscribe({
       next: ({ data }) => {
         this.CategourisList = data;
-        console.log("Fetched Category Data:", this.CategourisList);
+       
+        console.log("Fetched Category Data:", this.CategourisList); this.isloading=false
       },
       error: (err) => {
         console.error('Error fetching category by ID:', err);
@@ -57,7 +60,8 @@ export class ProductByCategorisComponent implements OnInit {
     this._CategoriesService.getCategoriesById(idCat).subscribe({
       next: ({ data }) => {
         this.specificCategory = data;
-        console.log("Fetched Products Data:", this.specificCategory);
+       
+        console.log("Fetched Products Data:", this.specificCategory); this.isloading=false
       },
       error: (err) => {
         console.error('Error fetching products by category:', err);

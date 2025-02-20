@@ -1,6 +1,43 @@
 <div class="container DetailsPage">
   <div class="row m-0 p-0">
     <div class="col-md-5">
+      @if(isloading) {
+      <div class="mt-3">
+        <ngx-skeleton-loader
+          class="mb-1"
+          style="margin-top: 50px; width: 100px"
+          [theme]="{ height: '300px', borderRadius: '10px' }"
+        ></ngx-skeleton-loader>
+        <div class="d-flex flex-row align-items-center justify-content-center py-4">
+          <ngx-skeleton-loader
+            style="margin-top: 10px; margin-right: 10px; width: 90px"
+            class="mb-2"
+            [theme]="{ height: '60px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+            style="margin-top: 10px; margin-right: 10px; width: 90px"
+            class="mb-2"
+            [theme]="{ height: '60px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+            style="margin-top: 10px; margin-right: 10px; width: 90px"
+            class="mb-2"
+            [theme]="{ height: '60px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+            style="margin-top: 10px; margin-right: 10px; width: 90px"
+            class="mb-2"
+            [theme]="{ height: '60px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+            style="margin-top: 10px; margin-right: 10px; width: 90px"
+            class="mb-2"
+            [theme]="{ height: '60px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+        </div>
+      </div>
+
+      } @else {
       <div class="DivImages">
         <header
           class="ImgCover w-100"
@@ -23,11 +60,40 @@
           </owl-carousel-o>
         </div>
       </div>
+      }
     </div>
+
     <div class="col-md-5">
       <div class="AllInfo px-2 py-1">
+        @if (isloading) {
+        <div class="d-flex flex-column ">
+          <ngx-skeleton-loader
+            [theme]="{ height: '20px', width: '200px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+            [theme]="{ height: '20px', width: '250px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+            class="mt-3"
+            [theme]="{ height: '50px', width: '220px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+            [theme]="{ height: '20px', width: '170px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+          [theme]="{ height: '20px', width: '170px', borderRadius: '10px' }"
+        ></ngx-skeleton-loader>
+        <ngx-skeleton-loader
+        [theme]="{ height: '20px', width: '270px', borderRadius: '10px' }"
+      ></ngx-skeleton-loader>
+      <ngx-skeleton-loader
+      [theme]="{ height: '20px', width: '300px', borderRadius: '10px' }"
+    ></ngx-skeleton-loader>
+        </div>
+
+        } @else {
         <h2 class="text-h3 fs-2 fw-semibold mt-3 headerColorr py-4">
-          {{ specificProduct.title | cut:2 }}
+          {{ specificProduct.title | cut : 2 }}
         </h2>
         <div class="categoyry my-2">
           <h4 class="d-inline fw-bold colorr">Category Name:</h4>
@@ -38,7 +104,9 @@
           <span class="h5 mx-2">{{ specificProduct.brand.name }}</span>
         </div>
         <div class="description my-4 w-75">
-          <p class="text-secondary">{{ specificProduct.description  | cut:20 }}</p>
+          <p class="text-secondary">
+            {{ specificProduct.description | cut : 20 }}
+          </p>
         </div>
         <div class="price my-2">
           <h4 class="d-inline fw-bold colorr">Price</h4>
@@ -46,23 +114,39 @@
         <h4 class="h3 headerColorr px-1">
           {{ specificProduct.price | currency : "USD" : "symbol" : "1.0" }}
         </h4>
-        <!-- <h1>{{specificProduct.quantity}}</h1>  -->
         <div class="PriceAndStar pt-1">
           <div class="star">
             @for (num of [1,2,3,4,5].slice(0,specificProduct.ratingsAverage);
             track $index) {
-
-            <span> <i class="fas fa-star rating-color"></i></span>}
-            @if(specificProduct.ratingsAverage %1 !==0){
-            <i class="fa-solid fa-star-half-stroke rating-color star"></i> }
+            <span> <i class="fas fa-star rating-color"></i></span>
+            } @if(specificProduct.ratingsAverage %1 !== 0) {
+            <i class="fa-solid fa-star-half-stroke rating-color star"></i>
+            }
           </div>
         </div>
+        }
       </div>
+
       <div class="bbttnn my-4">
+        @if (isloading) {
+        <div
+          class="d-flex flex-row my-"
+        >
+          <ngx-skeleton-loader
+            style=" margin-right: 50px; width: 200px;"
+            [theme]="{ height: '50px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+          <ngx-skeleton-loader
+            style=" margin-right: 20px; width: 200px;"
+            [theme]="{ height: '50px', borderRadius: '10px' }"
+          ></ngx-skeleton-loader>
+        </div>
+        } @else {
         <button class="AddToCart mx-2" (click)="addToCart(specificProduct._id)">
           Add to Cart
         </button>
         <button routerLink="/Cart" class="ShowCart mx-3">Show Cart</button>
+        }
       </div>
     </div>
   </div>
