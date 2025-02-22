@@ -18,11 +18,16 @@ import Swal from 'sweetalert2';
 export class CartComponent {
   isloading: boolean = true;
   private readonly _CartService = inject(CartService);
+  getUserToken=localStorage.getItem('userToken');
   ProductsInCart: Icart = {} as Icart;
   ngOnInit(): void {
-    this.ShowProductsInCart();
+    if(this.getUserToken==undefined || this.getUserToken==null){
+            this.ShowProductsInCart();
+    }
+    
   }
   ShowProductsInCart() {
+    
     this._CartService.GetProductsCart().subscribe(({ data }) => {
       this.isloading = false;
       this.ProductsInCart = data;
