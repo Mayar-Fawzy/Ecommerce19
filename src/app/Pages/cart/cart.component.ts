@@ -21,10 +21,10 @@ export class CartComponent {
   getUserToken=localStorage.getItem('userToken');
   ProductsInCart: Icart = {} as Icart;
   ngOnInit(): void {
-    if(this.getUserToken==undefined || this.getUserToken==null){
+  
             this.ShowProductsInCart();
-    }
     
+
   }
   ShowProductsInCart() {
     

@@ -20,11 +20,12 @@
   </div>
   <div class="my-3">
     
-    @if(isloading==true){
+    @if(isloading){
       <div class="text-center">
           <div class="loader"></div>
         </div>
       }
+      @else{
         @for (item of ProductsInCart.products; track item.product.id) {
           <div class="row justify-content-between mb-1 border-bottom">
             <!-- Image -->
@@ -72,6 +73,8 @@
       
           }
    
+      }
+      
   
   </div>
 
