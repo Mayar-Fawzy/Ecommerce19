@@ -53,6 +53,3 @@ export class NavbarComponent {
   //cart Products
   //علشان الرقم يفضل ثابت حتي لو انتقلت من اي comp
 }
-// addToWishList(id:string){
-
-// }

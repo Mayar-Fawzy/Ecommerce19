@@ -7,6 +7,7 @@ import { WishlistService } from '../../../core/Services/wishlist.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../../../core/Services/cart.service';
+import { Icart } from '../../../core/interfaces/icart';
 @Component({
   selector: 'app-card-product',
   imports: [CurrencyPipe, RoutingModule,CutPipe],
@@ -15,7 +16,7 @@ import { CartService } from '../../../core/Services/cart.service';
 })
 export class CardProductComponent{
   @Input() CardProducts: ICardProducts []=[];
-
+   WishLisst:Icart[]=[]
   msgError!: string;
    private readonly _ActivatedRoute = inject(ActivatedRoute);
     private readonly _Router = inject(Router);
@@ -31,8 +32,9 @@ export class CardProductComponent{
   addToWishList(productId: string) {
     this._WishlistService.Addproducttowishlist(productId).subscribe({
       next: (data) => {
-       
+           this.WishLisst=data
           this._WishlistService.addNumToWishlist();
+          console.log('WishList' ,this.WishLisst);
           console.log( this._WishlistService.wishlistNumber())
         
 

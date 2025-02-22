@@ -29,11 +29,24 @@ export class WishlistService {
        )
 
         }
+        GetProductswishlist():Observable<any>{
+          return this._HttpClient.get(`${Environment.baseUrl}/api/v1/wishlist`)
+        }
         DeleteItem(id:string):Observable<any>{
           return this._HttpClient.delete(`${Environment.baseUrl}/api/v1/wishlist/${id}`)
          }
          RemoveAll():Observable<any>{
           return this._HttpClient.delete(`${Environment.baseUrl}/api/v1/wishlist`
+           )
+         }
+         QuantityForCount(id:string , MaxCount:number):Observable<any>
+         {
+          return this._HttpClient.put(`${Environment.baseUrl}/api/v1/wishlist/${id}`,
+            {
+              // body
+              "count":MaxCount
+            },
+            
            )
          }
 }

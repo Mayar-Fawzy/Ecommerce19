@@ -56,13 +56,16 @@
       <i routerLink="/Cart" routerLinkActive="ActiveIcon" class="fa-solid fs-5 fa-cart-shopping "></i>
       
       </div>
-      <div class="Heart">
-        <span class=" text-center">
+      <div class="Shop">
+       
+          <span class="counttH text-center">
+            
+            {{WishListNum()}}
           
-          <!-- {{WishListNum()}} -->
-        
-        </span> 
-        <i routerLink="/Wishlist" routerLinkActive="ActiveIcon"  class="fa-regular fs-5 fa-heart"></i>
+          </span> 
+          <i routerLink="/Wishlist" routerLinkActive="ActiveIcon"  class="fa-regular fs-5 fa-heart"></i>
+    </div>
+     
     </div>
     <div class="PersonalData">
       <div class="avatarr" (click)="toggleShow()">
@@ -101,8 +104,10 @@
         </div>
       </div>
     </div>
-  </div>
+
+  
     }
+
     @else{
       <ul class="d-flex gap-3 list-unstyled m-0">
         <li>
