@@ -133,3 +133,55 @@ border-radius: 5px
      top: -12px; left: 14px;
     background-color: var(--error);
 }
+
+.menuResponsive{
+    display: none;
+}
+.menueForResponsive {
+    width: 0; 
+    height: 0;
+    background-color: rebeccapurple;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 150;
+    display: none;
+    transition:  1s width ease-in-out , 1s height  ease-in-out, .5s opacity  ease-in-out;
+    opacity: 0;
+}
+.menueForResponsive.Show{
+    opacity: 1;
+    width: 100vw;
+    display: flex;
+
+    height: 100vh;
+    transition:  1s width ease-in-out , 1s height  ease-in-out, .5s opacity  ease-in-out;
+
+}
+.listMenue{
+    height: 100%;
+    width: 100%;
+}
+@media (max-width: 991.98px) { 
+    .navResponsive{
+        display: none;
+    }
+    .rightSide{
+        display: none !important;
+    }
+    .menuResponsive{
+        display: block;
+    }
+    nav{
+        height: 800px;
+    }
+ }
+
+
+.close{
+    position: absolute;
+    top:0;
+    background-color: azure;
+    left: 10px;
+    padding: 10px;
+}

@@ -1,4 +1,6 @@
-<header class="px-4 py-3 d-flex justify-content-between align-items-center shadow-sm rounded-5 m-2 ">
+<header
+  class="px-4 py-3 d-flex justify-content-between align-items-center shadow-sm rounded-5 m-2"
+>
   <div class="LeftSide gap-3 d-flex align-items-center">
     <div class="logo">
       <a
@@ -9,9 +11,8 @@
         <img src="Imges/freshcart-logo.svg" alt="" />
       </a>
     </div>
-   
   </div>
-  <nav>
+  <nav class="navResponsive">
     <ul class="d-flex gap-3 list-unstyled m-0">
       <li>
         <a
@@ -47,31 +48,34 @@
       </li>
     </ul>
   </nav>
+
   <div class="rightSide d-flex align-items-center gap-3">
     @if(islogin){
-        <div class="socialIcons d-flex  align-items-center gap-2">
-   
+    <div class="socialIcons d-flex align-items-center gap-2">
       <div class="Shop">
-        <span class="countt text-center">{{countt()}}</span>
-      <i routerLink="/Cart" routerLinkActive="ActiveIcon" class="fa-solid fs-5 fa-cart-shopping "></i>
-      
+        <span class="countt text-center">{{ countt() }}</span>
+        <i
+          routerLink="/Cart"
+          routerLinkActive="ActiveIcon"
+          class="fa-solid fs-5 fa-cart-shopping"
+        ></i>
       </div>
       <div class="Shop">
-       
-          <span class="counttH text-center">
-            
-            {{WishListNum()}}
-          
-          </span> 
-          <i routerLink="/Wishlist" routerLinkActive="ActiveIcon"  class="fa-regular fs-5 fa-heart"></i>
-    </div>
-     
+        <span class="counttH text-center">
+          {{ WishListNum() }}
+        </span>
+        <i
+          routerLink="/Wishlist"
+          routerLinkActive="ActiveIcon"
+          class="fa-regular fs-5 fa-heart"
+        ></i>
+      </div>
     </div>
     <div class="PersonalData">
       <div class="avatarr" (click)="toggleShow()">
-        <img class="AvatarImg"  src="Imges/Avatar.png" width="35" alt="" />
+        <img class="AvatarImg" src="Imges/Avatar.png" width="35" alt="" />
       </div>
-      <div  class="Person shadow-lg" [ngClass]='Show? "Show":" " '>
+      <div class="Person shadow-lg" [ngClass]="Show ? 'Show' : ' '">
         <h3 class="h5 m-0">User Profile</h3>
         <hr />
         <div class="info d-flex align-items-center gap-4">
@@ -80,56 +84,97 @@
           </div>
 
           <div class="infoFrontofPhoto">
-            <h5>{{userName}}</h5>
-            <p>{{userEmail}}</p>
+            <h5>{{ userName }}</h5>
+            <p>{{ userEmail }}</p>
           </div>
         </div>
         <hr />
-       
-        <div class="AccountSettings d-flex align-items-center gap-5">
 
-            <div class="LogoSetting">
-                <i class="fa fs-4 fa-user"></i>
-            </div>
-            <div routerLink="/Personal" class="AccountData pt-2">
-                <h5 class="h6">My Profile</h5>
-                <h5 class="h6">Account Settings</h5>
-            </div>
+        <div class="AccountSettings d-flex align-items-center gap-5">
+          <div class="LogoSetting">
+            <i class="fa fs-4 fa-user"></i>
+          </div>
+          <div routerLink="/Personal" class="AccountData pt-2">
+            <h5 class="h6">My Profile</h5>
+            <h5 class="h6">Account Settings</h5>
+          </div>
         </div>
-        <hr>
-       
-    
+        <hr />
+
         <div class="LogOut">
-            <button routerLink="/auth/login"  class=" btn-LogOut "> LogOut<i class="p-1 fa-solid fa-right-from-bracket"></i></button>
+          <button routerLink="/auth/login" class="btn-LogOut">
+            LogOut<i class="p-1 fa-solid fa-right-from-bracket"></i>
+          </button>
         </div>
       </div>
     </div>
 
-  
+    } @else{
+    <ul class="d-flex gap-3 list-unstyled m-0">
+      <li>
+        <a
+          routerLink="/auth/login"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Login</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/auth/Register"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Register</a
+        >
+      </li>
+    </ul>
     }
+  </div>
 
-    @else{
-      <ul class="d-flex gap-3 list-unstyled m-0">
-        <li>
-          <a
-            routerLink="/auth/login"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >Login</a
-          >
-        </li>
-        <li>
-          <a
-            routerLink="/auth/Register"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >Register</a
-          >
-        </li>
-      
-       
-      </ul>
-    }
-  
+  <div class="menuResponsive">
+    <i class="fa-solid fa-bars" (click)="toggleMenue()"></i>
+    <div class="menueForResponsive " [ngClass]="isopen ? 'Show' : ''">
+      <div class="listMenue">
+        <nav class="d-flex align-items-center justify-content-center h-100">
+          <ul class="d-flex gap-3 list-unstyled m-0 flex-column">
+            <li>
+              <a
+                routerLink="/home"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="/Product"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="/Categories"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >Categories</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="/Brands"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >brands</a
+              >
+            </li>
+          </ul>
+          <div class="close" (click)="toggleMenue()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </nav>
+      </div>
+    </div>
   </div>
 </header>

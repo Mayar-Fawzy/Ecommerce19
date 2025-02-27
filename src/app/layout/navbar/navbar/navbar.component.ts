@@ -4,6 +4,7 @@ import { RoutingModule } from '../../../core/Shared/Module/routing/routing.modul
 import { CartService } from '../../../core/Services/cart.service';
 import { WishlistService } from '../../../core/Services/wishlist.service';
 import { AuthService } from '../../../core/Services/auth.service';
+import { th } from 'date-fns/locale';
 
 @Component({
   selector: 'app-navbar',
@@ -12,8 +13,12 @@ import { AuthService } from '../../../core/Services/auth.service';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
+  isopen:boolean=false;
   islogin!:boolean;
   Show: boolean = false;
+  toggleMenue(){
+    this.isopen=!this.isopen;
+  }
   toggleShow() {
     this.Show = !this.Show;
   }

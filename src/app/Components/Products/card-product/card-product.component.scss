@@ -1,6 +1,9 @@
 .Allcard {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  
   gap: 7px;
 }
 .cardProduct{
@@ -11,7 +14,7 @@
     rgba(0, 0, 0, 0.2) 0px 4px 10px -6px;
 
  
-  width: 280px;
+  width: 320px;
   height: 20%;
 
  
@@ -98,3 +101,33 @@ align-items: center;
   }
 }
 
+
+@media (max-width: 1200px) {
+  .Allcard {
+
+    justify-content: space-around;
+    
+  }
+}
+@media (max-width: 1024px) {
+  .Allcard {
+
+    justify-content: center !important;
+    
+  }
+  .cardProduct{
+    width: 280px;
+  }
+}
+@media (max-width: 600px) {
+
+  .cardProduct{
+    width: 350px;
+  }
+}
+@media (max-width: 400px) {
+
+  .cardProduct{
+    width: 300px;
+  }
+}

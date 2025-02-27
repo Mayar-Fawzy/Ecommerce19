@@ -2,13 +2,23 @@
   background-color: #151414;
  
 }
-.Contacts{ display: flex;
+.Contacts{
+   display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     padding:20px ;
 }
 .icon{
     color: var( --main-color);
     margin-top: 15px;
+}
+.footerRes{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px 20px;
 }
 .US{
     color: white !important;
@@ -22,7 +32,9 @@
 .Part{
     color: white !important;
    
-    width: 30%;
+    width: 100%;
+    max-width: calc((100% - 250px) / 3);
+    min-width: 250px;
 }
 .iconss {
     display: flex;
@@ -106,6 +118,13 @@
 }
 .greyLine{
     background-color: gray;
-    width: 82rem; height: 2px;
+    width: 100%; height: 2px;
 }
 
+
+@media (max-width : 768px) {
+  .footerRes{
+    justify-content: center;
+    align-items: start;
+  }
+}

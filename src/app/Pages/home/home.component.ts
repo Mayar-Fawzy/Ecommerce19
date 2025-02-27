@@ -6,23 +6,24 @@ import { ProductsService } from '../../core/Services/products.service';
 import { ICardProducts } from '../../core/interfaces/card-products';
 import { FooterComponent } from '../../layout/footer/footer/footer.component';
 
-
 @Component({
   selector: 'app-home',
-  imports: [SliderHeaderComponent,SliderCategoryComponent,CardProductComponent],
+  imports: [
+    SliderHeaderComponent,
+    SliderCategoryComponent,
+    CardProductComponent,
+  ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  ProductList:ICardProducts[]=[];
-  private readonly _ProductsService=inject(ProductsService);
+  ProductList: ICardProducts[] = [];
+  private readonly _ProductsService = inject(ProductsService);
 
-ngOnInit(): void {
-this. _ProductsService.getAllProducts(10,2).subscribe((res)=>{
-     this.ProductList=res.data;
-     console.log(this.ProductList)
-    
-})
-}
-
+  ngOnInit(): void {
+    this._ProductsService.getAllProducts(12, 2).subscribe((res) => {
+      this.ProductList = res.data;
+      console.log(this.ProductList);
+    });
+  }
 }
