@@ -32,20 +32,7 @@ export class NavbarComponent {
   userName: string = '';
   userEmail: string = '';
   ngOnInit(): void {
-    this._AuthService.userData.subscribe((user) => {
-      if (user) {
-        this.userEmail = user.email; // Extract email from decoded token
-        this.userName = user.name;
-        console.log('email' + this.userEmail);
-        console.log('Name' + this.userName);
-      }
-      this._AuthService.getAuthSubject().subscribe({
-        next:(status)=>{
-          this.islogin=status
-        }
-      })
-     
-    });
+ 
 
     this._CartService.GetProductsCart().subscribe({
       next: (res) => {
@@ -53,6 +40,10 @@ export class NavbarComponent {
         this._CartService.countNumber.set(res.numOfCartItems);
       },
     });
+    if(this._AuthService.saveuserdata()){
+      this.islogin=true;
+    }
+    this.userEmail = localStorage.getItem('EmailUser')!;
   }
 
   //cart Products

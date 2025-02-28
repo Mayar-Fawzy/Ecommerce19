@@ -1,0 +1,53 @@
+::ng-deep .ant-tabs-tab{
+    padding: 10px;
+    background-color: blueviolet;
+}
+
+:host ::ng-deep .ant-tabs-tab{
+    padding: 10px;
+    background-color: blueviolet;
+    border-radius: 10px;
+    color: white;
+}
+
+:host ::ng-deep .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #ffff;
+    text-shadow: 0 0 .25px currentcolor;
+}
+:host ::ng-deep  .ant-tabs-tab-btn:focus {
+    color: #ffff;
+    text-shadow: 0 0 .25px currentcolor;
+}
+:host ::ng-deep .ant-tabs-top > .ant-tabs-nav .ant-tabs-ink-bar, .ant-tabs-top > div > .ant-tabs-nav .ant-tabs-ink-bar {
+    bottom: 0;
+    background-color: plum;
+}
+:host ::ng-deep .ant-tabs-tab + .ant-tabs-tab {
+    margin: 0 0 0 15px;
+}
+
+.title h2{
+    position: relative;
+    background-color: cadetblue;
+    margin-left: 80px;
+}
+.title h2::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: #742929;
+
+    right: -40px;
+  
+}
+.title h2::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: #742929;
+
+    left: -40px;
+  
+}
