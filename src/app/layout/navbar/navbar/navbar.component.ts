@@ -1,5 +1,5 @@
 import { Component, computed, inject, Signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { RoutingModule } from '../../../core/Shared/Module/routing/routing.module';
 import { CartService } from '../../../core/Services/cart.service';
 import { WishlistService } from '../../../core/Services/wishlist.service';
@@ -23,6 +23,7 @@ export class NavbarComponent {
     this.Show = !this.Show;
   }
   private readonly _CartService = inject(CartService);
+  private readonly _Router = inject(Router);
   private readonly _AuthService = inject(AuthService);
   private readonly _WishlistService = inject(WishlistService);
   countt: Signal<number> = computed(() => this._CartService.countNumber());
@@ -48,4 +49,12 @@ export class NavbarComponent {
 
   //cart Products
   //علشان الرقم يفضل ثابت حتي لو انتقلت من اي comp
+  logout(){  
+    this.islogin=false;
+    this._AuthService.logout();
+
+  
+
+    this._Router.navigate(['/auth/login']);
+  }
 }
