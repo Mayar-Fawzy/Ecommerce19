@@ -1,4 +1,50 @@
-<p>show-address works!</p>
-<p>show-address works!</p>
-<p>show-address works!</p>
-<p>show-address works!</p>
+<div class="all d-flex">
+  <div class="container w-75 h-100 my-5">
+    <div class="profile-container p-4">
+      <div class="avatarr profile-header">
+        <img class="AvatarImg" src="Imges/Avatar.png" alt="User Avatar" />
+
+        <i class="fa fa-camera upload-icon1"></i>
+      </div>
+
+      <div class="mt-4">
+        <button class="btn btn-upload w-100">
+          <i class="fa fa-upload"></i> Upload Photo
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container my-5">
+    <div class="profile-container p-2">
+      <div class="profile-header">
+        <h3 class="edit fw-bolder"><strong>Edit User</strong></h3>
+      </div>
+      <hr />
+
+      <div class="row">
+        <div class="col-md-6">
+          <label class="form-label">Name </label>
+          <input type="text" class="form-control"     formControlName="name" value="{{ userName }}" />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label"> Email</label>          <input
+          style="cursor: not-allowed;"
+            type="email"
+            class="form-control bg-light"
+            value="{{ userEmail }}"
+            readonly
+          />
+        </div>
+      </div>
+
+      <div class="mt-5 d-flex gap-3" >
+        <button (click)=" Updatee()"class="btn btn-edit w-50">
+          <i class="fa fa-edit"></i> Edit
+        </button>
+        <button (click)=" Updatee()"class="btn btn-cancel w-50">
+          <i class="fa fa-times"></i> Cancle
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { Environment } from '../../Environments/Environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
@@ -11,7 +11,23 @@ export class AuthService {
   userData!:any
 
   private readonly _HttpClient = inject(HttpClient);
+  UpdateMe(userData:any): Observable<any>{
+    // /api/v1/users/updateMe/
+    const token = localStorage.getItem('userToken');
 
+    if (!token) {
+      console.error("No token found in localStorage!");
+      return throwError(() => new Error("Unauthorized: No token found"));
+    }
+  
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`
+    });
+    return this._HttpClient.post(`${Environment.baseUrl}/api/v1/users/updateMe/`,this.userData, {
+       headers}
+    )
+
+  }
   login(userdata: any): Observable<any> {
     return this._HttpClient.post(
       `${Environment.baseUrl}/api/v1/auth/signin`,

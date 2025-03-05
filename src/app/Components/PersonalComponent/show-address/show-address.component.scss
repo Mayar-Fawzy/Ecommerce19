@@ -1,0 +1,76 @@
+.profile-container {
+    max-width: 800px;
+    height: 300px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.AvatarImg{
+    background-color: var(--main-color);
+    border-radius: 50%;
+  position: relative;
+  height: 300px;
+}
+.profile-header {
+    display: flex;
+  justify-content: center;
+    align-items: center;
+    gap: 19px;   
+    margin-top: 30px;
+  
+}
+.edit{
+    color: var(--main-color);
+}
+.profile-header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #ddd;
+}
+.upload-icon1 {
+    position: absolute;
+    bottom: 200px;
+    left: 344px;
+
+    background-color:red ;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.upload-icon:hover {
+    background: green;
+
+}
+.btn-upload {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 30px;
+}
+.edit-icon {
+    position: relative;
+    top: -15px;
+    left: -10px;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.btn-edit {
+    background-color: var(--main-color);
+    color: white;
+    font-size: 18px;
+}
+.btn-cancel {
+    background-color: #d9534f;
+    color: white;
+    font-size: 18px;
+}
