@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-change-password',
   imports: [],
   templateUrl: './change-password.component.html',
-  styleUrl: './change-password.component.scss'
+  styleUrls:['../show-address/show-address.component.scss','./change-password.component.scss'] 
 })
 export class ChangePasswordComponent {
 
