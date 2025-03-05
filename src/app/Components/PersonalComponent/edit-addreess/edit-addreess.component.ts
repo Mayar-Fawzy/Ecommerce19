@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-edit-addreess',
   imports: [],
   templateUrl: './edit-addreess.component.html',
-  styleUrl: './edit-addreess.component.scss'
+  styleUrls: ['../show-address/show-address.component.scss','./edit-addreess.component.scss']
 })
 export class EditAddreessComponent {
 

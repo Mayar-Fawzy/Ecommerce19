@@ -3,7 +3,7 @@
   <div class="card p-3 shadow h-100" style="width: 450px">
     <div class="card-header d-flex justify-content-between text-white">
       <h3>Account Details</h3>
-      <i class="fa-solid fs-4 pt-2 fa-pen-to-square" (click)="goToEditUser()" style="cursor:pointer;"></i>
+      <i class="fa-solid fs-4 pt-2 fa-pen-to-square" (click)="goToEditUser(1)" style="cursor:pointer;"></i>
     </div>
     <div class="card-body">
       <div class="details d-flex align-items-center gap-3">
@@ -25,7 +25,7 @@
         </div>
       </div>
       <hr />
-      <button (click)="goToEditUser()" class="btn btn-success w-100">
+      <button (click)="goToEditUser(1)" class="btn btn-success w-100">
         Edit
       </button>
     </div>
@@ -35,7 +35,7 @@
   <div class="card p-3 shadow h-auto" style="width: 450px">
     <div class="card-header d-flex justify-content-between text-white">
       <h3>Address Details</h3>
-      <i class="fa-solid fs-4 pt-2 fa-pen-to-square" (click)="goToEditUser()" style="cursor:pointer;"></i>
+      <i class="fa-solid fs-4 pt-2 fa-pen-to-square" (click)="goToEditUser(2)" style="cursor:pointer;"></i>
     </div>
     <div class="card-body m-1">
       <div class="details d-flex align-items-center gap-3">
@@ -47,7 +47,7 @@
       </div>
 
       <hr />
-      <button (click)="goToEditUser()" class="btn w-100">Edit</button>
+      <button (click)="goToEditUser(2)" class="btn w-100">Edit</button>
     </div>
   </div>
 </div>

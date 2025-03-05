@@ -13,9 +13,10 @@ import { AuthService } from '../../../core/Services/auth.service';
 export class PersonalDataComponent {
   @Output() tabChange = new EventEmitter<number>();
  
-  goToEditUser() {
-    this.tabChange.emit(1);
+  goToEditUser(num:number) {
+    this.tabChange.emit(num);
   }
+  
   private readonly _AuthService=inject(AuthService);
   userEmail :string= localStorage.getItem('EmailUser')!;
   userName: string =this._AuthService.saveuserdata().name;
