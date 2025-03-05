@@ -1,1 +1,54 @@
-<p>personal-data works!</p>
+<div class="cards d-flex  gap-4 flex-wrap">
+  <!-- بطاقة بيانات الحساب -->
+  <div class="card p-3 shadow h-100" style="width: 450px;">
+    <div class="card-header text-center text-white">
+      <h3>Account Details</h3>
+    </div>
+    <div class="card-body">
+      <div class="details d-flex align-items-center gap-3">
+        <div class="avatarr">
+          <img
+            class="AvatarImg rounded-circle border"
+            src="Imges/Avatar.png"
+            width="60"
+            alt="User Avatar"
+          />
+        </div>
+        <div class="info">
+          <h5>Username: <span id="username">Mayar</span></h5>
+          <h5>Email: <span id="email">mayar1.com</span></h5>
+        </div>
+      </div>
+      <hr />
+      <button (click)="goToEditUser()" class="btn btn-success w-100">
+        Edit
+      </button>
+    </div>
+  </div>
+
+  <!-- بطاقة بيانات العنوان -->
+  <div
+    class="card p-3 shadow h-auto"
+    style="width: 450px;"
+  >
+    <div class="card-header text-center">
+      <h3>Address Details</h3>
+    </div>
+    <div class="card-body m-2">
+      <div class="details d-flex align-items-center gap-3">
+        <i class="fa-solid fa-location-dot fs-3 text-success"></i>
+        <div class="Address">
+          <h5 class="m-0">Address: <span id="address">Shbien</span></h5>
+          <h5 class="m-0"><span id="address">El-nasser Street</span></h5>
+        </div>
+        
+        
+      </div>
+      
+      <hr />
+      <button (click)="goToEditUser()" class="btn w-100">
+        Edit
+      </button>
+    </div>
+  </div>
+</div>

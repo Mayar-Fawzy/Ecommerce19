@@ -74,9 +74,17 @@ export const routes: Routes = [
         path: 'Personal',
         title: 'Personal',
         loadComponent: () =>
-          import('./Pages/personal/personal.component').then(
-            (m) => m.PersonalComponent
+          import('./Pages/personal/personall/personall.component').then(
+            (m) => m.PersonallComponent
           ),
+        children: [
+          {path:'personalComp',loadComponent:()=>import('./Components/PersonalComponent/personal/personal.component').then(m=>m.PersonalComponent),
+            children:[ 
+              {path:'ShowAddress',loadComponent:()=>import('./Components/PersonalComponent/show-address/show-address.component').then(m=>m.ShowAddressComponent)},
+            ]          },
+          
+        ]
+        
       },
       {
         path: 'Wishlist',

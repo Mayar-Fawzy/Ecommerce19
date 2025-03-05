@@ -1,0 +1,17 @@
+<div class="banner">
+
+</div>
+
+<div class="p-5">
+  <nz-tabset [(nzSelectedIndex)]="selectedTab">
+    <nz-tab nzTitle="Show Data">
+ <app-personal-data (tabChange)="changeTab($event)"></app-personal-data>
+    </nz-tab>
+    <nz-tab nzTitle="edit User">
+     <app-show-address></app-show-address>
+    </nz-tab>
+    <nz-tab nzTitle="Change Password">
+   <app-change-password></app-change-password>
+    </nz-tab>
+  </nz-tabset>
+</div>

@@ -1,4 +1,4 @@
-import { Component, computed, inject, Signal } from '@angular/core';
+import { Component, computed, inject, signal, Signal, WritableSignal } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { RoutingModule } from '../../../core/Shared/Module/routing/routing.module';
 import { CartService } from '../../../core/Services/cart.service';
@@ -14,7 +14,8 @@ import { th } from 'date-fns/locale';
 })
 export class NavbarComponent {
   isopen:boolean=false;
-  islogin!:boolean;
+ 
+  
   Show: boolean = false;
   toggleMenue(){
     this.isopen=!this.isopen;
@@ -30,30 +31,30 @@ export class NavbarComponent {
   WishListNum: Signal<number> = computed(() =>
     this._WishlistService.wishlistNumber()
   );
+  islogin=this._AuthService.getuserlogged()
   userName: string = '';
   userEmail: string = '';
   ngOnInit(): void {
  
-
+  
     this._CartService.GetProductsCart().subscribe({
       next: (res) => {
         console.log('cart items', res);
         this._CartService.countNumber.set(res.numOfCartItems);
       },
     });
-    if(this._AuthService.saveuserdata()){
-      this.islogin=true;
-    }
+    // if(this._AuthService.saveuserdata()){
+    //   this.islogin=true;
+    // }
     this.userEmail = localStorage.getItem('EmailUser')!;
+    
   }
 
   //cart Products
   //علشان الرقم يفضل ثابت حتي لو انتقلت من اي comp
   logout(){  
-    this.islogin=false;
+   
     this._AuthService.logout();
-
-  
 
     this._Router.navigate(['/auth/login']);
   }

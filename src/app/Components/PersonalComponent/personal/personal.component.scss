@@ -1,11 +1,7 @@
-::ng-deep .ant-tabs-tab{
-    padding: 10px;
-    background-color: blueviolet;
-}
 
 :host ::ng-deep .ant-tabs-tab{
     padding: 10px;
-    background-color: blueviolet;
+    background-color:var(--main-color);
     border-radius: 10px;
     color: white;
 }
@@ -20,7 +16,7 @@
 }
 :host ::ng-deep .ant-tabs-top > .ant-tabs-nav .ant-tabs-ink-bar, .ant-tabs-top > div > .ant-tabs-nav .ant-tabs-ink-bar {
     bottom: 0;
-    background-color: plum;
+    background-color:green;
 }
 :host ::ng-deep .ant-tabs-tab + .ant-tabs-tab {
     margin: 0 0 0 15px;
