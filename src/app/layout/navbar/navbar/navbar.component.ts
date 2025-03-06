@@ -22,6 +22,7 @@ export class NavbarComponent {
   }
   toggleShow() {
     this.Show = !this.Show;
+    
   }
   private readonly _CartService = inject(CartService);
   private readonly _Router = inject(Router);

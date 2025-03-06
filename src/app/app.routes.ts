@@ -148,7 +148,7 @@ export const routes: Routes = [
         title: 'Not Found',
         loadComponent: () =>
           import(
-            './Components/SharedComponent/not-found/not-found.component'
+            './not-found/not-found.component'
           ).then((m) => m.NotFoundComponent),
       },
     ],
