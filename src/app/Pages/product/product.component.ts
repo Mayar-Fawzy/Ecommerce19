@@ -32,7 +32,7 @@ onPageChange(page: number): void {
 this.page=page;
 this._ProductsService.getAllProducts(12, this.page).subscribe((res) => {
   this.ProductList = res.data;
-  
+  console.log('ProductList', this.ProductList);
 });
 }
 }

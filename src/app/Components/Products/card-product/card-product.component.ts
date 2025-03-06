@@ -14,9 +14,10 @@ import { Icart } from '../../../core/interfaces/icart';
   templateUrl: './card-product.component.html',
   styleUrl: './card-product.component.scss'
 })
-export class CardProductComponent{
+export class CardProductComponent{  
   @Input() CardProducts: ICardProducts []=[];
-   WishLisst:Icart[]=[]
+   WishLisst:ICardProducts[]=[];
+  @Input() WishLisstCard:ICardProducts[]=[];
   msgError!: string;
    private readonly _ActivatedRoute = inject(ActivatedRoute);
     private readonly _Router = inject(Router);
@@ -32,7 +33,9 @@ export class CardProductComponent{
   addToWishList(productId: string) {
     this._WishlistService.Addproducttowishlist(productId).subscribe({
       next: (data) => {
-           this.WishLisst=data
+           this.WishLisst=data;
+           this._ToastrService.success('Product Added to Wishlist', 'Success');
+           
           this._WishlistService.addNumToWishlist();
           console.log('WishList' ,this.WishLisst);
           console.log( this._WishlistService.wishlistNumber())

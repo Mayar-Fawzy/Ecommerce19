@@ -1,79 +1,140 @@
-.cr{
-    color: var(--main-color);
-}
-.OrderButton{
-    margin-top: 8px !important;
-    border-radius: 5px;
-    border: none; 
-    color: white;
-   
-    padding: 10px 50px;
-    font-size: 16px; 
-    cursor: pointer;
-    background-color: var(--main-color) !important;
-    &:hover{
-      color: rgba(255, 255, 255,.8);
-    }
-  }
-  .center{
-    display: flex ;
-    justify-content: center ;
-    align-items: center ;
-  }
-  .Delete{
-    
-        margin-top: 20px !important;
-        border-radius: 5px;
-        border: none; 
-        color: white;
-       
-        padding: 6px 10px;
-        font-size: 16px; 
-        cursor: pointer;
-        background-color: rgb(188, 60, 60) !important;
-        &:hover{
-          color: rgba(255, 255, 255,.8);
-        }
-      
-  }
-  .colorr{
-    color: rgb(10, 173, 10) !important;
-}
-.delete{
-   
-    border-radius: 5px;
-    border: none; 
-    color: white;
-   
-    padding: 9px 10px;
-    font-size: 16px; 
-    cursor: pointer;
-    background-color: rgb(188, 60, 60) !important;
-    &:hover{
-      color: rgba(255, 255, 255,.8);
-    }
+.Allcard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   
+  gap: 7px;
+}
+.cardProduct{
+  position: relative !important;
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: rgba(10, 173, 10, 0.15) 0px 8px 15px -5px,
+    rgba(0, 0, 0, 0.2) 0px 4px 10px -6px;
+
+ 
+  width: 320px;
+  height: 20%;
+
+ 
+  border-radius: 20px;
+  margin: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.HEART{
+  position: absolute;
+  top: 20px; left: 20px;
+  color: rgb(213, 13, 13);
+  font-size: 25px;
+  cursor: pointer;
+}
+.ChildDiv{
+  position: absolute !important;
+  top: 20px; right: -50px;
+  width:50px; height: 120px;
+  border-radius: 10px 10px 0px 0px;
+  transition: 1s right ease-in;
 }
 
-.loader {
-  margin-top:30px;
-  width: 48px;
-  height: 48px;
-  border: 5px solid #FFF;
-  border-bottom-color: var(--main-color);
-  
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+.cardProduct:hover {
+  cursor: pointer;
+  // box-shadow: rgba(10, 173, 10, 0.1) 0px 15px 30px -5px,
+  //   rgba(10, 173, 10, 0.4) 0px 10px 20px -8px;
+  .cardProduct{
+    overflow: visible;
   }
-
-  @keyframes rotation {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg);
-  }
+  .ChildDiv{
+    top: 20px; right: 0px;
+    transition: 1s right ease-in;
   }
  
+}
+.AllInfo {
+  margin: 6px;
+}
+.PriceAndStar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.star {
+  color: var(--rating-color);
+  font-size: 17px;
+}
+
+.imgCard {
+  
+  
+  height: 250px;
+  img {
+  
+    width: 100%;
+    background-position: center;
+     height: 100%;
+    object-fit: fill;
+  
+  }
+  
+}
+.ShopCircle{
+  position: absolute;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  top: 225px; right: 25px;
+  background-color:white;
+  .shopping:hover{
+    color: var(--main-color);
+  }
+}
+
+.iconss{
+  display: flex;
+ flex-direction: column;
+align-items: center;
+  background-color: white;
+  gap: 18px; 
+  padding: 20px;
+  margin-top: 12px;
+ 
+  color: #777E89;
+  .heart:hover{
+    color: red;
+  }
+  .eye:hover{
+    color: var(--main-color);
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .Allcard {
+
+    justify-content: space-around;
+    
+  }
+}
+@media (max-width: 1024px) {
+  .Allcard {
+
+    justify-content: center !important;
+    
+  }
+  .cardProduct{
+    width: 280px;
+  }
+}
+@media (max-width: 600px) {
+
+  .cardProduct{
+    width: 350px;
+  }
+}
+@media (max-width: 400px) {
+
+  .cardProduct{
+    width: 300px;
+  }
+}

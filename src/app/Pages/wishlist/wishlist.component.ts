@@ -9,27 +9,38 @@ import { CutPipe } from '../../core/Pipes/cut.pipe';
 import { RoutingModule } from '../../core/Shared/Module/routing/routing.module';
 import { IWishList } from '../../core/interfaces/iwish-list';
 import { CardProductComponent } from "../../Components/Products/card-product/card-product.component";
+import { ProductsService } from '../../core/Services/products.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-wishlist',
-  imports: [RoutingModule, CardProductComponent],
+  imports: [RoutingModule, CurrencyPipe, CutPipe],
   templateUrl: './wishlist.component.html',
   styleUrl: './wishlist.component.scss'
 })
 export class WishlistComponent {
-  private readonly _WishlistService=inject(WishlistService)
-  WishLisst: IWishList = {} as IWishList;
-   
+  private readonly _WishlistService=inject(WishlistService);
+  private readonly _CartService = inject(CartService);
+   private readonly _ToastrService = inject(ToastrService);
+     private readonly _Router = inject(Router);
+  WishLisst: ICardProducts[] = [];
+   page:number=1;
+   msgError!: string;
     isloading: boolean = true;
     ngOnInit(): void {
       this.ShowProductsInCart();
+    
     }
     ShowProductsInCart() {
-    this._WishlistService.GetProductswishlist().subscribe(({data})=>{
-    this.WishLisst=data
-    console.log("YouE",this.WishLisst);
+    this._WishlistService.GetProductswishlist().subscribe((res)=>{
+    this.WishLisst=res.data;
+     let CounttWishList = res.count;
+      console.log("CounttWishList",CounttWishList);
+    console.log("LOVEliSt",this.WishLisst);
    })
     }
+    
     RemoveAll() {
       Swal.fire({
         title: 'Are you sure?',
@@ -49,7 +60,7 @@ export class WishlistComponent {
            this._WishlistService.RemoveAll().subscribe((res) => {
         // this._WishlistService.countNumber.set(res.numOfCartItems);
         if (res.status == 'success') {
-          this.WishLisst ={} as IWishList;
+          this.WishLisst =  [];
           // this._CartService.countNumber.set(0);
         }
       });
@@ -89,4 +100,21 @@ export class WishlistComponent {
         this.WishLisst = data;
       });
     }
+    addToCart(productId: string) {
+      this._CartService.addProductToCart(productId).subscribe({
+        next: (data) => {
+          this._CartService.countNumber.set(data.numOfCartItems);
+          this._ToastrService.success('Product added to cart', 'FreshCart', {timeOut: 3000});
+          
+        },
+  
+        error: (err) => {
+          console.log(err);
+          this.msgError = err.error.message;
+          this._ToastrService.error(this.msgError, 'FreshCart', {timeOut: 2000});
+          this._Router.navigate(['/auth/login']);
+        },
+      });
+  
+  }
 }
