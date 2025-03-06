@@ -1,46 +1,81 @@
-
 <div class="row">
-    <div class="my-5 col-md-5">
-    <div class="profile-container p-4  rounded bg-white">
-        <div class="details d-flex align-items-center gap-3">
-            <i class="fa-solid fa-location-dot fs-2 text-success mt-3"></i>
-            <div class="profile-header text-center">
-                <h3 class="edit fw-bolder"><strong>Edit Address</strong></h3>
-              </div>
+  <div class="my-1 col-md-5">
+    <div class="profile-container p-4 rounded bg-white">
+      <div class="details d-flex align-items-center gap-3">
+        <i class="fa-solid fa-location-dot fs-2 text-success mt-3"></i>
+        <div class="profile-header text-center">
+          <h3 class="edit fw-bolder"><strong>Edit Address</strong></h3>
         </div>
-    
+      </div>
+
       <hr />
-  
-      <div class="row g-3">
-        <div class="col-md-12">
-            <label class="form-label">
-                <strong class="fs-4">City</strong>
-                </label>
-          <input type="text" class="form-control" placeholder="Enter current city" />
+      <form (ngSubmit)="UpdateAdreess()" [formGroup]="userdataDetail">
+        <div class="row g-3">
+          <div class="col-md-12">
+            <label for="city" class="form-label">
+              <strong class="fs-4">City</strong>
+            </label>
+            <input
+              id="city"
+              type="text"
+              formControlName="city"
+              class="form-control"
+              placeholder="Enter current city"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="details" class="form-label">
+              <strong class="fs-9"> Address Details</strong>
+            </label>
+            <input
+              id="details"
+              type="text"
+              class="form-control"
+              formControlName="details"
+              placeholder="Enter Details"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="phone" class="form-label"
+              ><strong class="fs-9"> Phone</strong></label
+            >
+            <input
+              id="phone"
+              type="tel"
+              class="form-control"
+              formControlName="phone"
+              placeholder="Phone"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="name" class="form-label"
+              ><strong class="fs-9"> name</strong></label
+            >
+            <input
+              id="name"
+              type="text"
+              class="form-control"
+              formControlName="name"
+              placeholder="name"
+            />
+          </div>
         </div>
-        <div class="col-md-6">
-          <label class="form-label">
-            <strong class="fs-9"> Address Details</strong>
-           </label>
-          <input type="text" class="form-control" placeholder="Enter Details" />
+
+        <div class="mt-4 d-flex justify-content-between">
+          <button
+            [disabled]="userdataDetail.invalid"
+            class="btn btn-edit w-50 me-2"
+          >
+            <i class="fa fa-edit"></i> Update
+          </button>
+          <button class="btn btn-cancel w-50">
+            <i class="fa fa-times"></i> Cancel
+          </button>
         </div>
-        <div class="col-md-6">
-          <label class="form-label"><strong class="fs-9"> Phone</strong></label>
-          <input type="tel" class="form-control" placeholder="Phone" />
-        </div>
-      </div>
-  
-      <div class="mt-4 d-flex justify-content-between">
-        <button (click)="goToEditUser(1)" class="btn btn-edit  w-50 me-2">
-          <i class="fa fa-edit"></i> Update
-        </button>
-        <button class="btn btn-cancel w-50">
-          <i class="fa fa-times"></i> Cancel
-        </button>
-      </div>
+      </form>
     </div>
   </div>
   <div class="col-md-4">
-    <img class="imgUnDraw"  src="/Imges/undraw_text-field_17if.png" />
+    <img class="imgUnDraw" src="/Imges/undraw_text-field_17if.png" />
   </div>
-  </div>
+</div>

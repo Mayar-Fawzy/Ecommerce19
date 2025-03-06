@@ -4,7 +4,7 @@ import { RoutingModule } from '../../../core/Shared/Module/routing/routing.modul
 import { ShowAddressComponent } from '../show-address/show-address.component';
 import { ChangePasswordComponent } from '../change-password/change-password.component';
 import { PersonalDataComponent } from '../personal-data/personal-data.component';
-import { EditAddreessComponent } from '../edit-addreess/edit-addreess.component';
+import { EditAddressComponent } from "../edit-addreess/edit-addreess.component";
 @Component({
   selector: 'app-personal',
   imports: [
@@ -13,8 +13,8 @@ import { EditAddreessComponent } from '../edit-addreess/edit-addreess.component'
     ShowAddressComponent,
     ChangePasswordComponent,
     PersonalDataComponent,
-    EditAddreessComponent,
-  ],
+    EditAddressComponent
+],
   templateUrl: './personal.component.html',
   styleUrl: './personal.component.scss',
 })

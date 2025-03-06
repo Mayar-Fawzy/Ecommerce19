@@ -1,8 +1,10 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { Environment } from '../../Environments/Environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { jwtDecode } from 'jwt-decode';
+import { tap } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root',
@@ -50,7 +52,35 @@ export class AuthService {
      
     }
   }
-
+  Addadress(userdataDetail: any): Observable<any> {
+    return this._HttpClient.post(
+      `${Environment.baseUrl}/api/v1/addresses`,
+      userdataDetail
+    ).pipe(
+      tap(() => this.GetAddress()) // ✅ تحديث البيانات فورًا بعد إضافة العنوان
+    );
+  }
+  
+   city = signal<string>('');  // Signal لحفظ المدينة
+   details = signal<string>('');  // Signal لحفظ التفاصيل
+ 
+   constructor(private http: HttpClient) {}
+ 
+   GetAddress() {
+     this.http.get<any>(`${Environment.baseUrl}/api/v1/addresses`).subscribe({
+       next: (res) => {
+         if (res.data && res.data.length > 0) {
+           const lastAddress = res.data[res.data.length - 1];
+           this.city.set(lastAddress.city);  // تحديث البيانات
+           this.details.set(lastAddress.details);
+         } else {
+           console.log('No address data available.');
+         }
+       },
+       error: (err) => console.log(err),
+     });
+   }
+ 
   logout() {
     localStorage.removeItem('userToken');
     localStorage.removeItem('user');
@@ -59,5 +89,6 @@ export class AuthService {
   getuserlogged(): boolean {
     return localStorage.getItem('userToken') ? true : false;
   }
+
 
 }
