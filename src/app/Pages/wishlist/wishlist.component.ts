@@ -36,9 +36,10 @@ export class WishlistComponent {
     ShowProductsInCart() {
     this._WishlistService.GetProductswishlist().subscribe((res)=>{
     this.WishLisst=res.data;
-     let CounttWishList = res.count;
+    this._WishlistService.countNumberWish.set(res.count);
+    
     this.isloading=false;
-      console.log("CounttWishList",CounttWishList);
+      console.log("CounttWishList",res.count);
     console.log("LOVEliSt",this.WishLisst);
    })
     }
@@ -93,6 +94,7 @@ export class WishlistComponent {
           });
           
       this._WishlistService.DeleteItem(id).subscribe((res) => {
+        this._WishlistService.countNumberWish.set(res.count);
         this.ShowProductsInCart();
   
         // this._CartService.countNumber.set(res.numOfCartItems);
@@ -102,11 +104,7 @@ export class WishlistComponent {
       });
   
     }
-    UpdateCount(id: string, MaxCount: number) {
-      this._WishlistService.QuantityForCount(id, MaxCount).subscribe(({ data }) => {
-        this.WishLisst = data;
-      });
-    }
+   
     addToCart(productId: string) {
       this._CartService.addProductToCart(productId).subscribe({
         next: (data) => {

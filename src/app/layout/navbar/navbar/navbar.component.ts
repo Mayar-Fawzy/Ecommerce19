@@ -28,15 +28,15 @@ export class NavbarComponent {
   private readonly _Router = inject(Router);
   private readonly _AuthService = inject(AuthService);
   private readonly _WishlistService = inject(WishlistService);
+  
   countt: Signal<number> = computed(() => this._CartService.countNumber());
-  WishListNum: Signal<number> = computed(() =>
-    this._WishlistService.wishlistNumber()
-  );
+   
+  counttWish: Signal<number> = computed(() => this._WishlistService.countNumberWish());
   islogin=this._AuthService.getuserlogged()
   userName: string = '';
   userEmail: string = '';
   ngOnInit(): void {
- 
+  
   
     this._CartService.GetProductsCart().subscribe({
       next: (res) => {
@@ -44,13 +44,16 @@ export class NavbarComponent {
         this._CartService.countNumber.set(res.numOfCartItems);
       },
     });
-    // if(this._AuthService.saveuserdata()){
-    //   this.islogin=true;
-    // }
+    this._WishlistService.GetProductswishlist().subscribe({
+      next: (res) => {
+        console.log('wishlist items', res);
+        this._WishlistService.countNumberWish.set(res.count);
+      },
+    });
     this.userEmail = localStorage.getItem('EmailUser')!;
     
   }
-
+ 
   //cart Products
   //علشان الرقم يفضل ثابت حتي لو انتقلت من اي comp
   logout(){  

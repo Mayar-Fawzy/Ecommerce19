@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal, WritableSignal } from '@angular/core';
+import { inject, Injectable, Signal, signal, WritableSignal } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Environment } from '../../Environments/Environment';
 
@@ -9,11 +9,8 @@ import { Environment } from '../../Environments/Environment';
 export class WishlistService {
    private readonly _HttpClient=inject(HttpClient)
     
-   wishlistNumber = signal(0); 
+   countNumberWish:WritableSignal<number>=signal(0);
 
-   addNumToWishlist() {
-     this.wishlistNumber.set(this.wishlistNumber() + 1); 
-   }
   constructor() { }
 
   Addproducttowishlist(id:string):Observable<any>{
