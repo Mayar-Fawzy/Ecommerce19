@@ -35,10 +35,10 @@ export class WishlistService {
         DeleteItem(id:string):Observable<any>{
           return this._HttpClient.delete(`${Environment.baseUrl}/api/v1/wishlist/${id}`)
          }
-         RemoveAll():Observable<any>{
-          return this._HttpClient.delete(`${Environment.baseUrl}/api/v1/wishlist`
-           )
-         }
+        //  RemoveAll():Observable<any>{
+        //   return this._HttpClient.delete(`${Environment.baseUrl}/api/v1/wishlist`
+        //    )
+        //  }
          QuantityForCount(id:string , MaxCount:number):Observable<any>
          {
           return this._HttpClient.put(`${Environment.baseUrl}/api/v1/wishlist/${id}`,

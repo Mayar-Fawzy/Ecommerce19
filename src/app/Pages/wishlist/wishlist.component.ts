@@ -12,10 +12,11 @@ import { CardProductComponent } from "../../Components/Products/card-product/car
 import { ProductsService } from '../../core/Services/products.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @Component({
   selector: 'app-wishlist',
-  imports: [RoutingModule, CurrencyPipe, CutPipe],
+  imports: [RoutingModule, CurrencyPipe, CutPipe,NgxSkeletonLoaderModule],
   templateUrl: './wishlist.component.html',
   styleUrl: './wishlist.component.scss'
 })
@@ -36,38 +37,44 @@ export class WishlistComponent {
     this._WishlistService.GetProductswishlist().subscribe((res)=>{
     this.WishLisst=res.data;
      let CounttWishList = res.count;
+    this.isloading=false;
       console.log("CounttWishList",CounttWishList);
     console.log("LOVEliSt",this.WishLisst);
    })
     }
     
-    RemoveAll() {
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: 'Deleted!',
-            text: 'Your file has been deleted.',
-            icon: 'success',
-          }); 
-           this._WishlistService.RemoveAll().subscribe((res) => {
-        // this._WishlistService.countNumber.set(res.numOfCartItems);
-        if (res.status == 'success') {
-          this.WishLisst =  [];
-          // this._CartService.countNumber.set(0);
-        }
-      });
-        }
-      });
+    // RemoveAll() {
+    //   Swal.fire({
+    //     title: 'Are you sure?',
+    //     text: "You won't be able to revert this!",
+    //     icon: 'warning',
+    //     showCancelButton: true,
+    //     confirmButtonColor: '#3085d6',
+    //     cancelButtonColor: '#d33',
+    //     confirmButtonText: 'Yes, delete it!',
+    //   }).then((result) => {
+    //     if (result.isConfirmed) {
+    //       Swal.fire({
+    //         title: 'Deleted!',
+    //         text: 'Your file has been deleted.',
+    //         icon: 'success',
+    //       }); 
+    //        this._WishlistService.RemoveAll().subscribe((res) => {
+
+    //     // this._WishlistService.countNumber.set(res.numOfCartItems);
+    //     this.WishLisst = [];
+    //     this.ShowProductsInCart();
+    //     console.log(this.WishLisst);
+
+    //     if (res.status == 'success') {
+    //       this.WishLisst = [];
+    //       // this._CartService.countNumber.set(0);
+    //     }
+    //   });
+    //     }
+    //   });
     
-    }
+    // }
     Remove(id: string) {
       Swal.fire({
         title: 'Are you sure?',
@@ -86,7 +93,7 @@ export class WishlistComponent {
           });
           
       this._WishlistService.DeleteItem(id).subscribe((res) => {
-        this.WishLisst = res.data;
+        this.ShowProductsInCart();
   
         // this._CartService.countNumber.set(res.numOfCartItems);
         console.log(this.WishLisst);

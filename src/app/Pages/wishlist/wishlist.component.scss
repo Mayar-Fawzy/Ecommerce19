@@ -100,15 +100,16 @@ align-items: center;
   margin-top: 12px;
  
   color: #777E89;
-  .heart:hover{
-    color: red;
-  }
+ 
   .eye:hover{
     color: var(--main-color);
   }
+
 }
 
-
+.DElete:hover{
+  color: red;
+}
 @media (max-width: 1200px) {
   .Allcard {
 
