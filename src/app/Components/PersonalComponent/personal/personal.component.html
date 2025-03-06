@@ -8,13 +8,13 @@
  <app-personal-data (tabChange)="changeTab($event)"></app-personal-data>
     </nz-tab>
     <nz-tab nzTitle="Edit User">
-     <app-show-address ></app-show-address>
+     <app-show-address (tabChange)="changeTab($event)" ></app-show-address>
     </nz-tab>
     <nz-tab nzTitle="Edit Address">
-      <app-edit-addreess ></app-edit-addreess>
+      <app-edit-addreess (tabChange)="changeTab($event)" ></app-edit-addreess>
      </nz-tab>
     <nz-tab nzTitle="Change Password">
-   <app-change-password></app-change-password>
+   <app-change-password ></app-change-password>
     </nz-tab>
   </nz-tabset>
 </div>

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { AuthService } from '../../../core/Services/auth.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -9,6 +9,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrl: './show-address.component.scss'
 })
 export class ShowAddressComponent {
+  @Output() tabChange = new EventEmitter<number>();
+ 
+  goToEditUser(num:number) {
+    this.tabChange.emit(num);
+  }
   private readonly _AuthService=inject(AuthService);
   userEmail :string= localStorage.getItem('EmailUser')!;
   userName: string =this._AuthService.saveuserdata().name;
@@ -18,14 +23,14 @@ export class ShowAddressComponent {
      phone:new FormControl(null,[Validators.required,Validators.pattern(/^01[0125][0-9]{8}$/)])  
     } 
     );
-  Updatee(){
-    this._AuthService.UpdateMe(this.registerform.value).subscribe(
-      (res) => {
-        console.log(res);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
+  // Updatee(){
+  //   this._AuthService.UpdateMe(this.registerform.value).subscribe(
+  //     (res) => {
+  //       console.log(res);
+  //     },
+  //     (err) => {
+  //       console.log(err);
+  //     }
+  //   );
+  // }
 }

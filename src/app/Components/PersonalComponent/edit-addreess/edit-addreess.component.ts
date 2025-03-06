@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-edit-addreess',
@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['../show-address/show-address.component.scss','./edit-addreess.component.scss']
 })
 export class EditAddreessComponent {
-
+ @Output() tabChange = new EventEmitter<number>();
+ 
+  goToEditUser(num:number) {
+    this.tabChange.emit(num);
+  }
 }

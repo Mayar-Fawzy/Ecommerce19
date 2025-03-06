@@ -14,7 +14,7 @@ export const routes: Routes = [
       {
         path: 'home',
         title: 'Home',
-       component:HomeComponent
+        component: HomeComponent,
       },
       {
         path: 'Product',
@@ -44,9 +44,9 @@ export const routes: Routes = [
         path: 'CategoriesProducts/:categoryId',
         title: 'Category Products',
         loadComponent: () =>
-          import('./Pages/product-by-categoris/product-by-categoris.component').then(
-            (m) => m.ProductByCategorisComponent
-          ),
+          import(
+            './Pages/product-by-categoris/product-by-categoris.component'
+          ).then((m) => m.ProductByCategorisComponent),
       },
       {
         path: 'Brands',
@@ -78,13 +78,23 @@ export const routes: Routes = [
             (m) => m.PersonallComponent
           ),
         children: [
-          {path:'personalComp',loadComponent:()=>import('./Components/PersonalComponent/personal/personal.component').then(m=>m.PersonalComponent),
-            children:[ 
-              {path:'ShowAddress',loadComponent:()=>import('./Components/PersonalComponent/show-address/show-address.component').then(m=>m.ShowAddressComponent)},
-            ]          },
-          
-        ]
-        
+          {
+            path: 'personalComp',
+            loadComponent: () =>
+              import(
+                './Components/PersonalComponent/personal/personal.component'
+              ).then((m) => m.PersonalComponent),
+            children: [
+              {
+                path: 'ShowAddress',
+                loadComponent: () =>
+                  import(
+                    './Components/PersonalComponent/show-address/show-address.component'
+                  ).then((m) => m.ShowAddressComponent),
+              },
+            ],
+          },
+        ],
       },
       {
         path: 'Wishlist',
@@ -127,9 +137,9 @@ export const routes: Routes = [
             path: 'Forgetpassword',
             title: 'Forget Password',
             loadComponent: () =>
-              import('./Pages/Auth/forget-password/forget-password.component').then(
-                (m) => m.ForgetPasswordComponent
-              ),
+              import(
+                './Pages/Auth/forget-password/forget-password.component'
+              ).then((m) => m.ForgetPasswordComponent),
           },
         ],
       },
@@ -137,9 +147,9 @@ export const routes: Routes = [
         path: '**',
         title: 'Not Found',
         loadComponent: () =>
-          import('./Components/SharedComponent/not-found/not-found.component').then(
-            (m) => m.NotFoundComponent
-          ),
+          import(
+            './Components/SharedComponent/not-found/not-found.component'
+          ).then((m) => m.NotFoundComponent),
       },
     ],
   },

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { RoutingModule } from '../../../core/Shared/Module/routing/routing.module';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
-import { ShowAddressComponent } from "../show-address/show-address.component";
+import { ShowAddressComponent } from '../show-address/show-address.component';
 import { AuthService } from '../../../core/Services/auth.service';
 
 @Component({
@@ -12,13 +12,12 @@ import { AuthService } from '../../../core/Services/auth.service';
 })
 export class PersonalDataComponent {
   @Output() tabChange = new EventEmitter<number>();
- 
-  goToEditUser(num:number) {
+
+  goToEditUser(num: number) {
     this.tabChange.emit(num);
   }
-  
-  private readonly _AuthService=inject(AuthService);
-  userEmail :string= localStorage.getItem('EmailUser')!;
-  userName: string =this._AuthService.saveuserdata().name;
-  
+
+  private readonly _AuthService = inject(AuthService);
+  userEmail: string = localStorage.getItem('EmailUser')!;
+  userName: string = this._AuthService.saveuserdata().name;
 }

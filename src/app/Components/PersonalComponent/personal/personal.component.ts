@@ -1,15 +1,22 @@
 import { Component } from '@angular/core';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { RoutingModule } from '../../../core/Shared/Module/routing/routing.module';
-import { ShowAddressComponent } from "../show-address/show-address.component";
-import { ChangePasswordComponent } from "../change-password/change-password.component";
-import { PersonalDataComponent } from "../personal-data/personal-data.component";
-import { EditAddreessComponent } from "../edit-addreess/edit-addreess.component";
+import { ShowAddressComponent } from '../show-address/show-address.component';
+import { ChangePasswordComponent } from '../change-password/change-password.component';
+import { PersonalDataComponent } from '../personal-data/personal-data.component';
+import { EditAddreessComponent } from '../edit-addreess/edit-addreess.component';
 @Component({
   selector: 'app-personal',
-  imports: [NzTabsModule, RoutingModule, ShowAddressComponent, ChangePasswordComponent, PersonalDataComponent, EditAddreessComponent],
+  imports: [
+    NzTabsModule,
+    RoutingModule,
+    ShowAddressComponent,
+    ChangePasswordComponent,
+    PersonalDataComponent,
+    EditAddreessComponent,
+  ],
   templateUrl: './personal.component.html',
-  styleUrl: './personal.component.scss'
+  styleUrl: './personal.component.scss',
 })
 export class PersonalComponent {
   selectedTab = 0;
