@@ -61,8 +61,8 @@ export class AuthService {
     );
   }
   
-   city = signal<string>('');  // Signal لحفظ المدينة
-   details = signal<string>('');  // Signal لحفظ التفاصيل
+   city = signal<string>('Cairo');  // Signal لحفظ المدينة
+   details = signal<string>('Madenet Nasser');  // Signal لحفظ التفاصيل
  
    constructor(private http: HttpClient) {}
  
@@ -80,7 +80,9 @@ export class AuthService {
        error: (err) => console.log(err),
      });
    }
- 
+ ChangePassword(userDataa:any): Observable<any> {
+    return this._HttpClient.put(`${Environment.baseUrl}/api/v1/users/changeMyPassword`,userDataa,)
+  }
   logout() {
     localStorage.removeItem('userToken');
     localStorage.removeItem('user');
