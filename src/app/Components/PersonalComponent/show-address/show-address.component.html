@@ -3,61 +3,51 @@
     <div class="profile-container p-4">
       <div class="avatarr profile-header">
         <img class="AvatarImg" src="Imges/Avatar.png" alt="User Avatar" />
-
         <i class="fa fa-camera upload-icon1"></i>
       </div>
-
       <div class="mt-4">
-
         <button class="btn btn-upload w-100">
           <i class="fa fa-upload"></i> Upload Photo
         </button>
       </div>
     </div>
   </div>
+
   <div class="container my-5">
     <div class="profile-container p-2">
       <div class="profile-header">
-        
-        <h3 class="edit fw-bolder"><strong>Edit User</strong>
-        
-        
-        </h3>
+        <h3 class="edit fw-bolder"><strong>Edit User</strong></h3>
       </div>
       <hr />
 
-      <div class="row">
-        <div class="col-md-6">
-          <label class="form-label">Name </label>
-          <input
-            type="text"
-            class="form-control"
-            formControlName="name"
-            value="{{ userName }}"
-          />
-        </div>
-        <div class="col-md-6">
-          <label class="form-label"> Email</label>
-          <input
-            style="cursor: not-allowed"
-            type="email"
-            class="form-control bg-light"
-            value="{{ userEmail }}"
-            readonly
-          />
-        </div>
-      </div>
+      <form [formGroup]="userForm" (ngSubmit)="UpdateUserName()">
+        <div class="row">
+          <div class="col-md-6">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" />
+          </div>
 
-  
-      <div class="mt-5 d-flex gap-3">
-        <button (click)="goToEditUser(0)" class="btn btn-edit w-50">
-          <i class="fa fa-edit"></i>Update
-        </button>
-        <button (click)="goToEditUser(0)" class="btn btn-cancel w-50">
-          <i class="fa fa-times"></i> Cancle
-        </button>
-      </div>
+          <div class="col-md-6">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control bg-light"
+              [value]="userEmail"
+              readonly
+              style="cursor: not-allowed"
+            />
+          </div>
+        </div>
+
+        <div class="mt-5 d-flex gap-3">
+          <button type="submit" [disabled]="userForm.invalid" class="btn btn-edit w-50">
+            <i class="fa fa-edit"></i> Update
+          </button>
+          <button type="button" (click)="goToEditUser(0)" class="btn btn-cancel w-50">
+            <i class="fa fa-times"></i> Cancel
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
-
