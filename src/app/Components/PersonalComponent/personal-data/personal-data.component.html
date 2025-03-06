@@ -1,9 +1,13 @@
 <div class="cards d-flex p-4 gap-4 flex-wrap">
   <!-- بطاقة بيانات الحساب -->
-  <div class="card p-3 shadow h-100" style="width: 450px">
-    <div class="card-header d-flex justify-content-between text-white">
-      <h3>Account Details</h3>
-      <i class="fa-solid fs-4 pt-2 fa-pen-to-square" (click)="goToEditUser(1)" style="cursor:pointer;"></i>
+  <div class="card p-3 shadow h-100" style="width: 600px">
+    <div class="card-header d-flex justify-content-center">
+      <i
+        class="fa-solid fs-4 pt-1 fa-pen-to-square me-2"
+        (click)="goToEditUser(1)"
+        style="cursor: pointer; color: var(--main-color)"
+      ></i>
+      <h3 class="edit fw-bolder"><strong>Account Details</strong></h3>
     </div>
     <div class="card-body">
       <div class="details d-flex align-items-center gap-3">
@@ -32,17 +36,21 @@
   </div>
 
   <!-- بطاقة بيانات العنوان -->
-  <div class="card p-3 shadow h-auto" style="width: 450px">
-    <div class="card-header d-flex justify-content-between text-white">
-      <h3>Address Details</h3>
-      <i class="fa-solid fs-4 pt-2 fa-pen-to-square" (click)="goToEditUser(2)" style="cursor:pointer;"></i>
+  <div class="card p-3 shadow h-auto" style="width: 600px">
+    <div class="card-header d-flex justify-content-center">
+      <i
+        class="fa-solid fs-4 pt-1 fa-pen-to-square me-2"
+        (click)="goToEditUser(1)"
+        style="cursor: pointer; color: var(--main-color)"
+      ></i>
+      <h3 class="edit fw-bolder"><strong>Address Details</strong></h3>
     </div>
     <div class="card-body m-1">
       <div class="details d-flex align-items-center gap-3">
         <i class="fa-solid fa-location-dot fs-3 text-success"></i>
         <div class="Address">
-          <h5 class="h6" id="address"><span >Shbien</span></h5>
-          <h5 class="h6 "><span id="address2">El-nasser Street</span></h5>
+          <h5 class="h6" id="address"><span>Shbien</span></h5>
+          <h5 class="h6"><span id="address2">El-nasser Street</span></h5>
         </div>
       </div>
 

@@ -8,6 +8,7 @@
       </div>
 
       <div class="mt-4">
+
         <button class="btn btn-upload w-100">
           <i class="fa fa-upload"></i> Upload Photo
         </button>
@@ -17,7 +18,11 @@
   <div class="container my-5">
     <div class="profile-container p-2">
       <div class="profile-header">
-        <h3 class="edit fw-bolder"><strong>Edit User</strong></h3>
+        
+        <h3 class="edit fw-bolder"><strong>Edit User</strong>
+        
+        
+        </h3>
       </div>
       <hr />
 
@@ -45,19 +50,14 @@
 
   
       <div class="mt-5 d-flex gap-3">
-        <button (click)="goToEditUser(1)" class="btn btn-edit w-50">
-          <i class="fa fa-edit"></i> Update
+        <button (click)="goToEditUser(0)" class="btn btn-edit w-50">
+          <i class="fa fa-edit"></i>Update
         </button>
-        <button (click)="goToEditUser(1)" class="btn btn-cancel w-50">
+        <button (click)="goToEditUser(0)" class="btn btn-cancel w-50">
           <i class="fa fa-times"></i> Cancle
         </button>
       </div>
     </div>
   </div>
 </div>
-<div class="bg-danger" (click)="goToEditUser(1)">
-  <i class="fa fa-edit"></i> Edit
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem modi non exercitationem! A doloremque dignissimos neque debitis sint, consequatur nobis ducimus maiores dolore ab hic, eos ipsam omnis consectetur aliquam?
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero placeat ea cumque consequuntur alias temporibus doloremque, magni odit, officia modi aliquid fugit quibusam, aperiam assumenda unde est mollitia repudiandae earum!
-  </p>
-</div>
+
