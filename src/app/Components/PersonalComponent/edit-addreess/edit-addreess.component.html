@@ -10,10 +10,21 @@
 
       <hr />
       <form (ngSubmit)="UpdateAdreess()" [formGroup]="userdataDetail">
-        <div class="row g-3">
+        <div class="row">
           <div class="col-md-12">
+          <label for="name" class="form-label"
+          ><strong class="fs-9">name</strong> </label
+        >
+        <input
+          id="name"
+          type="text"
+          class="form-control"
+          formControlName="name"
+          placeholder="name"
+        /></div>
+          <div class="col-md-6 my-3">
             <label for="city" class="form-label">
-              <strong class="fs-4">City</strong>
+              <strong class="fs-9"> City</strong>
             </label>
             <input
               id="city"
@@ -23,19 +34,7 @@
               placeholder="Enter current city"
             />
           </div>
-          <div class="col-md-6">
-            <label for="details" class="form-label">
-              <strong class="fs-9"> Address Details</strong>
-            </label>
-            <input
-              id="details"
-              type="text"
-              class="form-control"
-              formControlName="details"
-              placeholder="Enter Details"
-            />
-          </div>
-          <div class="col-md-6">
+          <div class="col-md-6 my-3">
             <label for="phone" class="form-label"
               ><strong class="fs-9"> Phone</strong> </label
             >
@@ -48,19 +47,21 @@
               placeholder="Phone"
             />
           </div>
-          <div class="col-md-6">
-            <label for="name" class="form-label"
-              ><strong class="fs-9"> name</strong></label
-            >
-            <input
-              id="name"
-              type="text"
-              class="form-control"
-              formControlName="name"
-              placeholder="name"
-            />
+          
+            <div class="col-md-12">
+              <label for="details" class="form-label">
+                <strong class="fs-9"> Address Details</strong>
+              </label>
+              <textarea
+                id="details"
+                type="text"
+                class="form-control"
+                formControlName="details"
+                placeholder="Enter Details"
+              ></textarea>
+              
+            </div>
           </div>
-        </div>
 
         <div class="mt-4 d-flex justify-content-between">
           <button
