@@ -24,6 +24,11 @@ export class NavbarComponent {
     this.Show = !this.Show;
     
   }
+  isMenuOpen = false; // الحالة الافتراضية للقائمة
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen; // تبديل الحالة عند النقر
+  }
   private readonly _CartService = inject(CartService);
   private readonly _Router = inject(Router);
   private readonly _AuthService = inject(AuthService);

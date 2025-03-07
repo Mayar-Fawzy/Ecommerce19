@@ -15,7 +15,7 @@
     top: 60px;
     padding: 30px;
     right: 24px;
-    width: 350px;
+    width: 300px;
     box-shadow: rgba(0, 0, 0, 0.08) 1px 2px 10px;
     background-color: rgb(255, 255, 255);
     transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -120,7 +120,7 @@ border-radius: 5px
 .menueForResponsive {
     width: 0; 
     height: 0;
-    background-color: rebeccapurple;
+    background-color: rgb(245, 244, 244);
     position: fixed;
     top: 0;
     right: 0;
@@ -131,11 +131,14 @@ border-radius: 5px
 }
 .menueForResponsive.Show{
     opacity: 1;
-    width: 100vw;
+    width: 240px;
     display: flex;
-
-    height: 100vh;
+   margin-top:60px;
+   margin-right: 28px;
+    height: 60px;
+    border-radius: 20px;
     transition:  1s width ease-in-out , 1s height  ease-in-out, .5s opacity  ease-in-out;
+   
 
 }
 .listMenue{
@@ -158,10 +161,60 @@ border-radius: 5px
  }
 
 
-.close{
-    position: absolute;
-    top:0;
-    background-color: azure;
-    left: 10px;
-    padding: 10px;
+.fa-grip{
+    font-size: 30px;
+    color: var(--main-color);
 }
+.menu-container {
+    position: absolute;
+    width: 110px;
+   max-height: 250px;
+    top: 60px;
+    left: -18px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    padding: 7px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: 2s opacity ease-in, 1s  max-height ease-in-out;
+  }
+  
+  .menu-container ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-container li {
+    list-style: none;
+    padding: 10px;
+  }
+  
+  .menu-container a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  .PersonalDataRES{
+    padding-top: 10px !important;
+    padding-right: 20px !important;
+  }
+ .socialIconsRes{
+    font-size: 20px;
+    padding-right: 20px !important;
+    color: var(--main-color); 
+ }
+ .LogoSetting{
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+ }
+ .LogOut{
+    width: 100%;
+ }
+ .infoFrontofPhoto{
+   padding-top: 10px !important;
+   padding-bottom: 0px !important;
+ }
+  

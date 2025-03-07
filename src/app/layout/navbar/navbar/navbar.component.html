@@ -132,49 +132,85 @@
   </div>
 
   <div class="menuResponsive">
+    <div class="">
+
+    </div>
     <i class="fa-solid fa-bars" (click)="toggleMenue()"></i>
     <div class="menueForResponsive " [ngClass]="isopen ? 'Show' : ''">
       <div class="listMenue">
-        <nav class="d-flex align-items-center justify-content-center h-100">
+        <i class="fa-solid fa-grip fs-2 mx-4 my-3" (click)="toggleMenu()"></i>
+      
+        <nav *ngIf="isMenuOpen" class="menu-container">
           <ul class="d-flex gap-3 list-unstyled m-0 flex-column">
-            <li>
-              <a
-                routerLink="/home"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{ exact: true }"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a
-                routerLink="/Product"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{ exact: true }"
-                >Products</a
-              >
-            </li>
-            <li>
-              <a
-                routerLink="/Categories"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{ exact: true }"
-                >Categories</a
-              >
-            </li>
-            <li>
-              <a
-                routerLink="/Brands"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{ exact: true }"
-                >brands</a
-              >
-            </li>
+            <li><a (click)="toggleMenu()" routerLink="/home">Home</a></li>
+            <li><a (click)="toggleMenu()" routerLink="/Product">Products</a></li>
+            <li><a (click)="toggleMenu()" routerLink="/Categories">Categories</a></li>
+            <li><a (click)="toggleMenu()" routerLink="/Brands">Brands</a></li>
           </ul>
-          <div class="close" (click)="toggleMenue()">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
+         
         </nav>
       </div>
+      <div class="socialIcons socialIconsRes d-flex align-items-center gap-2">
+        <div class="Shop">
+          <span class="countt text-center">{{ countt() }}</span>
+          <i
+            routerLink="/Cart"
+            routerLinkActive="ActiveIcon"
+            class="fa-solid fs-5 fa-cart-shopping"
+          ></i>
+        </div>
+        <div class="Shop">
+          <span class="counttH text-center">
+            {{ counttWish() }}
+          </span>
+          <i
+            routerLink="/Wishlist"
+            routerLinkActive="ActiveIcon"
+            class="fa-regular fs-5 fa-heart"
+          ></i>
+        </div>
+      </div>
+      <div  class="PersonalDataRES" [ngClass]="isopen ? 'Show' : ''">
+        <div class="avatarr" (click)="toggleShow()">
+          <img class="AvatarImg" src="Imges/Avatar.png" width="35" alt="" />
+        </div>
+        <div class="Person text-center shadow-lg" [ngClass]="Show ? 'Show' : ' '">
+         
+          <div class="info d-flex align-items-center justify-content-between gap-4 ">
+           
+          
+            <div class="infoFrontofPhoto d-flex
+            p-1">
+              <img class="AvatarImg my-1" src="Imges/Avatar.png" width="30" height="40" alt="" />
+              <p>{{ userName }}</p>
+            
+             <p  style="margin-left: 3px; padding-top:11px; padding-right: 20x;"> User Name</p>
+            </div>
+          </div>
+          <hr />
+  <div (click)="toggleShow()">
+          <div  class="AccountSettings d-flex align-items-center gap-1"> 
+             <div  class="LogoSetting m-0">
+              <i class="fa fs-5 fa-user"></i>
+            </div>
+            <h5 (click)="toggleMenu()" class="h6 p-0 m-0">Account Settings</h5>
+          
+            <div routerLink="/Personal" class="AccountData pt-2">
+            
+             
+            </div>
+          </div>
+          <hr />
+  
+          <div (click)="logout()"  class="LogOut">
+            <button  class="btn-LogOut">
+              LogOut<i class="p-1 fa-solid fa-right-from-bracket"></i>
+            </button>
+          </div>
+        </div>
+        </div>
+      </div>
     </div>
+ 
   </div>
 </header>
