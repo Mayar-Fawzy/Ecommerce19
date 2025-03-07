@@ -89,3 +89,36 @@ background: #77B254!important;
     font-size: 29px;
   }
   
+@media (max-width: 1200px) {
+  .Allcard {
+
+    justify-content: space-around;
+    
+  }
+}
+@media (max-width: 1024px) {
+  .Allcard {
+
+    justify-content: center !important;
+    
+  }
+  .cardProduct{
+    width: 280px;
+  }
+}
+@media (min-width: 767px) {
+  .bbttnn{
+    margin-left: 0px !important;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+.AddToCart, .ShowCart{
+
+padding: 10px;
+
+}
+
+  
+}
+

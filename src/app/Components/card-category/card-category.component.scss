@@ -48,3 +48,33 @@
     }
   }
   
+
+@media (max-width: 1200px) {
+  .Allcard {
+
+    justify-content: space-around;
+    
+  }
+}
+@media (max-width: 1024px) {
+  .Allcard {
+
+    justify-content: center !important;
+    
+  }
+  .cardProduct{
+    width: 280px;
+  }
+}
+@media (max-width: 600px) {
+
+  .cardProduct{
+    width: 350px;
+  }
+}
+@media (max-width: 400px) {
+
+  .cardProduct{
+    width: 300px;
+  }
+}
