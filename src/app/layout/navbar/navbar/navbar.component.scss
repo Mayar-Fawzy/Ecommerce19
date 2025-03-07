@@ -121,7 +121,7 @@ border-radius: 5px
     width: 0; 
     height: 0;
     background-color: rgb(245, 244, 244);
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     z-index: 150;
@@ -157,6 +157,19 @@ border-radius: 5px
     }
     nav{
         height: 800px;
+    }
+    .Shop{
+        padding: 6PX;
+    }
+    .counttH{
+        left: 16px;
+        top: -5px;
+    }
+    .countt
+    {
+        left: 19px;
+        top: -5px;
+
     }
  }
 

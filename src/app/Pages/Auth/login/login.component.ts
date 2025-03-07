@@ -55,7 +55,8 @@ export class LoginComponent {
           this._AuthService.saveuserdata();
           console.log(this._AuthService.saveuserdata());
           localStorage.setItem('EmailUser', this.loginform.value.email);
-
+           localStorage.setItem('userName',res.user.name);
+           console.log("name", res.user.name)
           //Tost Succes
           this._ToastrService.success('Welcome', 'FreshCart', {
             timeOut: 3000,

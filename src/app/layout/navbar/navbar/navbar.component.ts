@@ -47,6 +47,7 @@ export class NavbarComponent {
       next: (res) => {
         console.log('cart items', res);
         this._CartService.countNumber.set(res.numOfCartItems);
+
       },
     });
     this._WishlistService.GetProductswishlist().subscribe({
@@ -56,7 +57,8 @@ export class NavbarComponent {
       },
     });
     this.userEmail = localStorage.getItem('EmailUser')!;
-    
+    this.userName = localStorage.getItem('userName')!;
+     console.log("UserData",this._AuthService.userData)
   }
  
   //cart Products
