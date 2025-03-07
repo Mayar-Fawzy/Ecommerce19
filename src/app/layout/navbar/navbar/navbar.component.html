@@ -48,6 +48,8 @@
       </li>
     </ul>
   </nav>
+@if( this._AuthService.isLoginSign())
+{
 
   <div class="rightSide d-flex align-items-center gap-3">
     
@@ -110,7 +112,11 @@
       </div>
     </div>
 
-    <!-- <ul class="d-flex gap-3 list-unstyled m-0">
+   
+  </div> 
+}
+@else {
+   <ul class="rightSide d-flex gap-3 list-unstyled m-0">
       <li>
         <a
           routerLink="/auth/login"
@@ -128,8 +134,9 @@
         >
       </li>
     </ul>
-     -->
-  </div>
+}
+ 
+    
 
   <div class="menuResponsive">
     <div class="">

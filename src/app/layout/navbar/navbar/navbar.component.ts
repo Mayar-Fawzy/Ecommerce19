@@ -1,10 +1,9 @@
 import { Component, computed, inject, signal, Signal, WritableSignal } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Router} from '@angular/router';
 import { RoutingModule } from '../../../core/Shared/Module/routing/routing.module';
 import { CartService } from '../../../core/Services/cart.service';
 import { WishlistService } from '../../../core/Services/wishlist.service';
 import { AuthService } from '../../../core/Services/auth.service';
-import { th } from 'date-fns/locale';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +13,7 @@ import { th } from 'date-fns/locale';
 })
 export class NavbarComponent {
   isopen:boolean=false;
- 
+
   
   Show: boolean = false;
   toggleMenue(){
@@ -31,7 +30,7 @@ export class NavbarComponent {
   }
   private readonly _CartService = inject(CartService);
   private readonly _Router = inject(Router);
-  private readonly _AuthService = inject(AuthService);
+  protected readonly _AuthService = inject(AuthService);
   private readonly _WishlistService = inject(WishlistService);
   
   countt: Signal<number> = computed(() => this._CartService.countNumber());
@@ -61,12 +60,11 @@ export class NavbarComponent {
      console.log("UserData",this._AuthService.userData)
   }
  
-  //cart Products
-  //علشان الرقم يفضل ثابت حتي لو انتقلت من اي comp
   logout(){  
    
     this._AuthService.logout();
 
     this._Router.navigate(['/auth/login']);
+    this._AuthService.isLoginSign.set(false);
   }
 }

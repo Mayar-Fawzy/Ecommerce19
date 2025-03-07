@@ -61,6 +61,8 @@ export class LoginComponent {
           this._ToastrService.success('Welcome', 'FreshCart', {
             timeOut: 3000,
           });
+          //IsLogin To ChangeNav
+          this._AuthService.isLoginSign.set(true);
           //3-navigate to home
           this._Router.navigate(['/home']);
         },
