@@ -22,3 +22,11 @@
     padding: 10px;
    
 }
+@media (max-width:441px) {
+    .info{
+        width: 60% !important;
+    }
+    .card{
+        width: 1500px !important;
+    }
+  }
