@@ -127,10 +127,10 @@
         }
       </div>
 
-      <div class="bbttnn my-4">
+      <div class="bbttnn">
         @if (isloading) {
         <div
-          class="d-flex flex-row my-"
+          class="d-flex flex-row "
         >
           <ngx-skeleton-loader
             style=" margin-right: 50px; width: 200px;"
@@ -142,7 +142,7 @@
           ></ngx-skeleton-loader>
         </div>
         } @else {
-        <button class="AddToCart mx-2" (click)="addToCart(specificProduct._id)">
+        <button class="AddToCart" (click)="addToCart(specificProduct._id)">
           Add to Cart
         </button>
         <button routerLink="/Cart" class="ShowCart mx-3">Show Cart</button>

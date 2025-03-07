@@ -88,37 +88,75 @@ background: #77B254!important;
     color: var(--rating-color);
     font-size: 29px;
   }
-  
-@media (max-width: 1200px) {
-  .Allcard {
-
-    justify-content: space-around;
+  // @media (max-width: 767px) {
+  //   .bbttnn {
+  //     flex-direction: column;
+  //     align-items: center;
+  //     margin-left: 0 !important;
+  //   }
+  //   .AddToCart, .ShowCart {
+  //     width: 100%;
+  //     padding: 12px;
+  //     margin: 5px 0;
+      
+  //     text-align: center;
+  //   }
+   
     
-  }
-}
-@media (max-width: 1024px) {
-  .Allcard {
-
-    justify-content: center !important;
     
-  }
-  .cardProduct{
-    width: 280px;
-  }
-}
-@media (min-width: 767px) {
-  .bbttnn{
-    margin-left: 0px !important;
+  // }
+  .bbttnn {
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: row; /* تأكد من أن الأزرار تكون بجانب بعضها */
+   padding-top: 40px !important;
+    align-items: center;
+    width: 100%;
+    gap: 10px; /* مسافة بين الأزرار */
+    background-color: transparent; /* إزالة الخلفية الزرقاء */
+   
+    margin: 0;
+}
+ 
+  @media(max-width:1253px){
+  .bbttnn{
+   
+ gap: 1px !important;
   }
-.AddToCart, .ShowCart{
-
-padding: 10px;
-
-}
-
+  .AddToCart, .ShowCart {
+    padding: 10px 30px;
+   }
+  }
   
-}
+  @media(max-width:1014px){
+    .bbttnn{
+    
+      width: 100%;
+    }
+    .AddToCart, .ShowCart {
+      margin: -29px;
+      padding:15px 17px ;
 
+     }
+  }
+  @media(max-width:799px){
+    .bbttnn{
+     
+      width: 100%;
+    }
+    .AddToCart, .ShowCart {
+      
+      padding:15px 14px ;
+
+     }
+  }
+  @media(max-width:767.5px){
+    .bbttnn{
+ 
+      width: 100%;
+    }
+    .AddToCart, .ShowCart {
+      margin: 14px;
+      padding:15px 14px ;
+
+     }
+  }
