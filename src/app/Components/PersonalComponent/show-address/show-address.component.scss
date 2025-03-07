@@ -7,12 +7,24 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.AvatarImg{
-    background-color: var(--main-color);
-    border-radius: 50%;
-  position: relative;
-  height: 300px;
+.avatarr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+.AvatarImg {
+    width: 150px; /* تحديد الحجم المناسب للصورة */
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #ddd;
+    object-fit: cover;
+   
+}
+
+
+
 .profile-header {
     display: flex;
   justify-content: center;
@@ -30,23 +42,7 @@
     border-radius: 50%;
     border: 4px solid #ddd;
 }
-.upload-icon1 {
-    position: absolute;
-    bottom: 200px;
-    left: 344px;
 
-    background-color:red ;
-    background: white;
-    border-radius: 50%;
-    padding: 5px;
-    border: 1px solid #ddd;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.upload-icon:hover {
-    background: green;
-
-}
 .btn-upload {
     background-color: #28a745;
     color: white;
@@ -74,3 +70,26 @@
     color: white;
     font-size: 18px;
 }
+@media (max-width: 768px) {
+    
+   .all{
+    display: flex;
+    flex-direction: column;
+   }
+    .profile-container {
+        width: 100% !important;
+        padding: 15px;
+        height: 100%;
+        
+    }
+
+   .container{
+    width: 100% !important;
+   }
+    .btn-edit,
+    .btn-cancel {
+        font-size: 14px;
+        padding: 8px;
+    }
+} 
+  
