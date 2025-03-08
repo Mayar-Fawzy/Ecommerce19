@@ -144,6 +144,7 @@
     </div>
     <i class="fa-solid fa-bars" (click)="toggleMenue()"></i>
     <div class="menueForResponsive " [ngClass]="isopen ? 'Show' : ''">
+      @if(this._AuthService.isLoginSign()){
       <div class="listMenue">
         <i class="fa-solid fa-grip fs-2 mx-4 my-3" (click)="toggleMenu()"></i>
       
@@ -178,6 +179,9 @@
         </div>
       </div>
       <div  class="PersonalDataRES" [ngClass]="isopen ? 'Show' : ''">
+       
+
+        
         <div class="avatarr" (click)="toggleShow()">
           <img class="AvatarImg" src="Imges/Avatar.png" width="35" alt="" />
         </div>
@@ -212,8 +216,30 @@
           </div>
         </div>
         </div>
+      
       </div>
-    </div>
+      }@else { 
  
+ 
+        <ul class="d-flex gap-3 list-unstyled m-0">
+          <li>
+            <a
+              routerLink="/auth/login"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Login</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/auth/Register"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Register</a
+            >
+          </li>
+        </ul>
+      }
+      </div>
   </div>
 </header>

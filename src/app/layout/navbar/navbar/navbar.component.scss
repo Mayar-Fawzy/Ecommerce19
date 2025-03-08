@@ -128,6 +128,9 @@ border-radius: 5px
     display: none;
     transition:  1s width ease-in-out , 1s height  ease-in-out, .5s opacity  ease-in-out;
     opacity: 0;
+    .list-unstyled {
+        padding: 20px 60px!important;
+    }
 }
 .menueForResponsive.Show{
     opacity: 1;
