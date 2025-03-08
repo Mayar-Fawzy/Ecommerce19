@@ -33,10 +33,11 @@ export class CardProductComponent{
   addToWishList(productId: string) {
     this._WishlistService.Addproducttowishlist(productId).subscribe({
       next: (res) => {
-           this.WishLisst=res.data;
+           this.WishLisst=res.data;  
+           this._WishlistService.countNumberWish.set(res.count);
            this._ToastrService.success('Product Added to Wishlist', 'Success');
            
-           this._WishlistService.countNumberWish.set(res.count);
+         
            console.log('WishListSigNall' ,      this._WishlistService.countNumberWish.set(res.data.count));
           console.log('WishList' ,this.WishLisst);
         

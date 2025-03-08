@@ -11,7 +11,7 @@ import { tap } from 'rxjs/operators';
 export class AuthService {
   userData!: any;
   isLoginSign = signal<boolean>(false);
-  username = signal<string>(this.saveuserdata.name); 
+  username = signal<string>(this.saveuserdata().name); 
   private readonly _HttpClient = inject(HttpClient);
   UpdateMe(userData: any): Observable<any> {
     // /api/v1/users/updateMe/

@@ -1,4 +1,4 @@
-import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+
 import { Component, inject } from '@angular/core';
 import { ICardProducts } from '../../core/interfaces/card-products';
 import { ProductsService } from '../../core/Services/products.service';
@@ -7,7 +7,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @Component({
   selector: 'app-product',
-  imports: [CardProductComponent,NzPaginationModule,NgxSkeletonLoaderModule],
+  imports: [CardProductComponent,NgxSkeletonLoaderModule],
   templateUrl: './product.component.html',
   styleUrls: [ '../../core/Shared/Css/SharedStylee.css','./product.component.scss']
 })

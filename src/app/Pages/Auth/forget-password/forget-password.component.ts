@@ -5,8 +5,10 @@ import { RoutingModule } from '../../../core/Shared/Module/routing/routing.modul
 
 import { ToastrService } from 'ngx-toastr';
 import { ForgotPasswordService } from '../../../core/Services/forgot-password.service';
+import { from } from 'rxjs';
 @Component({
   selector: 'app-forget-password',
+  standalone: true,
   imports: [RoutingModule, ReactiveFormsModule],
   templateUrl: './forget-password.component.html',
   styleUrl: './forget-password.component.scss'
