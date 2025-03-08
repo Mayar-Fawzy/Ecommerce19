@@ -1,66 +1,95 @@
-
-.container{
+.container {
   margin-bottom: 200px !important;
   margin-top: 100px !important;
 }
-input{
-    padding:13px;
 
+input {
+  padding: 13px;
 }
-.forget{
-    color: var(--main-color) !important;
+
+.forget {
+  color: var(--main-color) !important;
 }
-.OrderButton{
-    margin-top: 8px !important;
-    border-radius: 5px;
-    border: none; 
-    color: white;
-   
-    padding: 10px 50px;
-    font-size: 16px; 
-    cursor: pointer;
-    background-color: var(--main-color) !important;
-    &:hover{
-      color: rgba(255, 255, 255,.8);
-    }
-  }
-  .center{
-    display: flex ;
-    justify-content: center ;
-    align-items: center ;
-  }
-  .colorr{
-    color: rgb(10, 173, 10) !important;
-}
-.active{
-    &:hover{
-          color: rgb(10, 173, 10) !important;
-    cursor: pointer;
-    }
-  
-}
+
 .OrderButton {
-  
   margin-top: 8px !important;
-border-radius: 5px;
-border: none; 
-color: white;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 10px 50px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: var(--main-color) !important;
 
-padding: 10px 50px;
-font-size: 16px; 
-cursor: pointer;
-background-color: var(--main-color) !important;
-&:hover{
-color: rgba(255, 255, 255,.8);
+  &:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.center2{
-position: relative;
+
+.colorr {
+  color: rgb(10, 173, 10) !important;
 }
-.cr{
-position: absolute;
-right: 10px; 
-bottom: 0;
-// margin-left: auto; 
-margin-top: 10px;
+
+.active {
+  &:hover {
+    color: rgb(10, 173, 10) !important;
+    cursor: pointer;
+  }
+}
+
+.OrderButton {
+  margin-top: 8px !important;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 10px 50px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: var(--main-color) !important;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.center2 {
+  position: relative;
+}
+
+.cr {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+  margin-top: 10px;
+
+  @media (max-width: 1200px) {
+    right: 8px;
+  }
+
+  @media (max-width: 992px) {
+    right: -7px;
+    width: 99%;
+    height: 54%;
+  }
+
+  @media (max-width: 768px) {
+    right: 0px;
+    width: 15px !important;
+  }
+
+  @media (max-width: 576px) {
+    right: 60px;
+    width: 10% !important;
+  }
+
+  @media (max-width: 360px) {
+    right: 40px;
+    width: 8% !important;
+  }
 }

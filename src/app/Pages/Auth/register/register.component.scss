@@ -1,56 +1,78 @@
-// .Divemail{
-  
-// }
-// .DivPass{
-
-// }
-input{
-    padding:10px;
-
-}
-.forget{
-    color: var(--main-color) !important;
+input {
+  padding: 10px;
 }
 
-  .center{
-    display: flex ;
-    justify-content: center ;
-    align-items: center ;
-  }
-  .colorr{
+.forget {
+  color: var(--main-color) !important;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colorr {
+  color: rgb(10, 173, 10) !important;
+}
+
+.active {
+  &:hover {
     color: rgb(10, 173, 10) !important;
-}
-.active{
-    &:hover{
-          color: rgb(10, 173, 10) !important;
     cursor: pointer;
-    }
+  }
+}
+
+.OrderButton {
+  margin-top: 8px !important;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 10px 50px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: var(--main-color) !important;
+
+  &:hover {
+    color: rgba(255, 255, 255, .8);
+  }
+}
+
+.center2 {
+  position: relative;
+}
+
+
+
+@media (max-width: 1200px) {
+  .OrderButton {
+    padding: 8px 40px;
+    font-size: 14px;
+  }
+
   
 }
 
-  
+@media (max-width: 992px) {
   .OrderButton {
+    padding: 10px 50px;
+    font-size: 16px;
+  }
+
   
-         margin-top: 8px !important;
-       border-radius: 5px;
-       border: none; 
-       color: white;
-     
-      padding: 10px 50px;
-      font-size: 16px; 
-      cursor: pointer;
-      background-color: var(--main-color) !important;
-   &:hover{
-     color: rgba(255, 255, 255,.8);
-    }
+}
+
+@media (max-width: 768px) {
+  .OrderButton {
+    padding: 12px 60px;
+    font-size: 18px;
   }
-  .center2{
-    position: relative;
+
+}
+
+@media (max-width: 576px) {
+  .OrderButton {
+    padding: 14px 70px;
+    font-size: 20px;
   }
- .cr{
-    position: absolute;
-    right: 10px; 
-    bottom: 0;
-    // margin-left: auto; 
-    margin-top: 10px;
- }
+}
