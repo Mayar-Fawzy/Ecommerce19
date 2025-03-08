@@ -76,4 +76,42 @@
       transform: rotate(360deg);
   }
   }
- 
+.product-img {
+  max-width: 80px; 
+  height: auto;
+}
+
+
+@media (max-width: 768px) {
+  .delete {
+    width: 100px; 
+     margin-top: 10px;
+  }
+
+  .OrderButton {
+    width: 100%;
+  }
+
+  .colorr {
+    font-size: 1rem; 
+  }
+
+  .fw-bolder {
+    font-size: 0.9rem; 
+  }
+
+  .cr {
+    font-size: 1.5rem; 
+  }
+}
+@media (max-width: 768px) {
+  .row.align-items-center {
+    flex-direction: column;
+    text-align: center;
+  }
+  .col-md-3, .col-md-2, .col-md-4 {
+    margin-bottom: 10px;
+  }
+}
+
+  

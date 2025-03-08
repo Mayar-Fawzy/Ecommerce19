@@ -1,9 +1,7 @@
 <section class="bg-main-light rounded-4 shadow p-4 my-2 mx-auto w-75">
-  <div class="d-flex justify-content-between">
-    <div class="">
+  <div class="d-flex justify-content-between flex-wrap">
+    <div>
       <h1 class="h2 fw-bold colorr">Shop Cart</h1>
-     
-     
       <h4 class="h5 my-2 py-2 fw-bold">
         Total Cart Price:
         {{
@@ -12,76 +10,54 @@
       </h4>
     </div>
 
-  <div class="">
-    
+    <div class="text-end">
       <button class="Delete" (click)="RemoveAll()">Clear All</button>
-  </div>
-    
-  </div>
-  <div class="my-3">
-    
-    @if(isloading){
-      <div class="text-center">
-          <div class="loader"></div>
-        </div>
-      }
-      @else{
-        @for (item of ProductsInCart.products; track item.product.id) {
-          <div class="row justify-content-between mb-1 border-bottom">
-            <!-- Image -->
-            <div class="col-md-1">
-              <img
-                [src]="item.product.imageCover"
-                class="w-100 h-100"
-                [alt]="item.product.title"
-              />
-            </div>
-      
-            <!-- Product Info -->
-      
-            <div class="col-md-3 my-2">
-              <h4 class="colorr">{{ item.product.title | cut : 2 }}</h4>
-      
-              <p class="fw-bolder m-0">
-                Price: {{ item.price | currency : "USD" : "symbol" : "1.0" }}
-              </p>
-            </div>
-      
-            <div class="col-md-2 my-4">
-              <div class="d-flex align-items-center gap-2">
-                <span
-                  (click)="UpdateCount(item.product.id, item.count + 1)"
-                  class="text-main cr"
-                >
-                  <i class="fa-solid fa-circle-plus fa-2xl"></i>
-                </span>
-                <span class="fw-bold">{{ item.count }}</span>
-                <span
-                  (click)="UpdateCount(item.product.id, item.count - 1)"
-                  class="text-main cr"
-                >
-                  <i class="fa-solid fa-circle-minus fa-2xl"></i>
-                </span>
-              </div>
-            </div>
-            <div class="my-3 col-md-2">
-              <button (click)="Remove(item.product.id)" class="delete">
-                <div class="fw-bold">Delete <i class="fa-solid fa-trash"></i></div>
-              </button>
-            </div>
-          </div>
-      
-          }
-   
-      }
-      
-  
+    </div>
   </div>
 
-  <div class="center">
+  <div class="my-3">
+    @if(isloading) {
+      <div class="text-center">
+        <div class="loader"></div>
+      </div>
+    } @else {
+      @for (item of ProductsInCart.products; track item.product.id) {
+        <div class="row align-items-center text-center text-md-start my-2 border-bottom pb-2">
+          <div class="col-6 col-md-2">
+            <img [src]="item.product.imageCover" class="img-fluid rounded shadow-sm" [alt]="item.product.title" />
+          </div>
+        
+          <div class="col-12 col-md-4 mt-3 mt-md-0">
+            <h4 class="fw-bold colorr">{{ item.product.title | cut : 2 }}</h4>
+            <p class="fw-bold m-0">
+              Price: {{ item.price | currency : "USD" : "symbol" : "1.0" }}
+            </p>
+          </div>
+        
+          <div class="col-12 col-md-3 mt-3 mt-md-0 d-flex justify-content-center">
+            <button class="btn btn-outline-success me-2" (click)="UpdateCount(item.product.id, item.count + 1)">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <span class="fw-bold mx-2">{{ item.count }}</span>
+            <button class="btn btn-outline-danger ms-2" (click)="UpdateCount(item.product.id, item.count - 1)">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+          </div>
+        
+          <div class="col-12 col-md-2 mt-3 mt-md-0 text-center text-md-end">
+            <button (click)="Remove(item.product.id)" class="btn btn-danger">
+              <i class="fa-solid fa-trash"></i> Delete
+            </button>
+          </div>
+        </div>
+        
+      }
+    }
+  </div>
+
+  <div class="text-center">
     <button class="OrderButton" [routerLink]="['/orders', ProductsInCart._id]">
       Order
     </button>
   </div>
-
 </section>
