@@ -29,3 +29,69 @@ ul{
     list-style: none;
     text-decoration: none;
 }
+
+
+
+//   &::-webkit-scrollbar-track:hover {
+//     background-color: #b8c0c2;
+//   }
+
+//   &::-webkit-scrollbar-track:active {
+//     background-color: #b8c0c2;
+//   }
+
+//   &::-webkit-scrollbar-thumb {
+//     border-radius: 5px;
+//     background-color: #33ff338e;
+//   }
+
+//   &::-webkit-scrollbar-thumb:hover {
+//     background-color: #33ff338e;
+//   }
+
+//   &::-webkit-scrollbar-thumb:active {
+//     background-color: #33ff338e;
+//   }
+// ::-webkit-scrollbar {
+//     width: 10px; /* عرض الشريط */
+//   }
+  
+//   /* تغيير لون الخلفية */
+//   ::-webkit-scrollbar-track {
+//     background: #000000; /* لون غامق للخلفية */
+//     border-radius: 5px;
+//   }
+  
+//   /* تغيير لون الشريط نفسه */
+//   ::-webkit-scrollbar-thumb {
+//     background: #0687068e; /* لون الشريط */
+//     border-radius: 5px;
+//   }
+  
+//   /* تأثير عند التحويم على الشريط */
+//   ::-webkit-scrollbar-thumb:hover {
+//     background: #0687068e; /* لون مختلف عند التحويم */
+//   }
+//   html {
+//     scrollbar-color: #0687068e #33ff338e; /* (لون الشريط، لون الخلفية) */
+//   }
+  
+//   /* تخصيص الزر العلوي والسفلي لشريط التمرير */
+//   ::-webkit-scrollbar-button {
+//     background-color: #33ff338e; /* تغيير لون الأسهم */
+//     border-radius: 5px;
+//   }
+  
+//   /* عند تحويم الماوس على الأزرار */
+//   ::-webkit-scrollbar-button:hover {
+//     background-color: #33ff338e;
+//   }
+  
+//   /* إزالة الأسهم بالكامل إذا أردت */
+//   ::-webkit-scrollbar-button:vertical:start:increment,
+//   ::-webkit-scrollbar-button:vertical:end:decrement {
+//     display: none;
+//   }
+  
+//   // skeleton
+  
