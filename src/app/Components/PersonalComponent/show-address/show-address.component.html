@@ -20,11 +20,11 @@
       </div>
       <hr />
 
-      <form [formGroup]="userForm" (ngSubmit)="UpdateUserName()">
+    
         <div class="row">
           <div class="col-md-6">
             <label class="form-label">Name</label>
-            <input type="text" class="form-control" formControlName="name" />
+            <input type="text" class="form-control" [value]="this._AuthService.saveuserdata().name" #InputName />
           </div>
 
           <div class="col-md-6">
@@ -40,14 +40,14 @@
         </div>
 
         <div class="mt-5 d-flex gap-3">
-          <button type="submit" [disabled]="userForm.invalid" class="btn btn-edit w-50">
+          <button (click)="Doo()" type="submit" class="btn btn-edit w-50">
             <i class="fa fa-edit"></i> Update
           </button>
           <button type="button" (click)="goToEditUser(0)" class="btn btn-cancel w-50">
             <i class="fa fa-times"></i> Cancel
           </button>
         </div>
-      </form>
+     
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal, Signal, WritableSignal } from '@angular/core';
+import { Component, computed, inject,  Signal} from '@angular/core';
 import { Router} from '@angular/router';
 import { RoutingModule } from '../../../core/Shared/Module/routing/routing.module';
 import { CartService } from '../../../core/Services/cart.service';
@@ -14,7 +14,6 @@ import { AuthService } from '../../../core/Services/auth.service';
 export class NavbarComponent {
   isopen:boolean=false;
 
-  
   Show: boolean = false;
   toggleMenue(){
     this.isopen=!this.isopen;
@@ -37,7 +36,7 @@ export class NavbarComponent {
    
   counttWish: Signal<number> = computed(() => this._WishlistService.countNumberWish());
   islogin=this._AuthService.getuserlogged()
-  userName: string = '';
+ 
   userEmail: string = '';
   ngOnInit(): void {
   
@@ -56,7 +55,7 @@ export class NavbarComponent {
       },
     });
     this.userEmail = localStorage.getItem('EmailUser')!;
-    this.userName = localStorage.getItem('userName')!;
+   
      console.log("UserData",this._AuthService.userData)
   }
  

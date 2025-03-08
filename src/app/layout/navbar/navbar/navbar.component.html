@@ -86,7 +86,7 @@
           </div>
 
           <div class="infoFrontofPhoto">
-            <h5>{{ userName }}</h5>
+            <h5>{{ this._AuthService.username() }}</h5>
             <p>{{ userEmail }}</p>
           </div>
         </div>
@@ -189,7 +189,7 @@
             <div class="infoFrontofPhoto d-flex
             p-1">
               <img class="AvatarImg my-1" src="Imges/Avatar.png" width="30" height="40" alt="" />
-              <p style="margin-left: 4px; padding-top:11px; padding-right: 20x; "class="text-center">{{ userName }}</p>
+              <p style="margin-left: 4px; padding-top:11px; padding-right: 20x; "class="text-center">{{ this._AuthService.username() }}</p>
          
             </div>
           </div>

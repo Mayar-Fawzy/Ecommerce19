@@ -5,7 +5,7 @@ import { AuthService } from '../../../core/Services/auth.service';
 
 @Component({
   selector: 'app-personal-data',
-  standalone: true, // اجعل المكون Standalone وفقًا لمعايير Angular 18
+  standalone: true, 
   imports: [RoutingModule, NzTabsModule],
   templateUrl: './personal-data.component.html',
   styleUrl: './personal-data.component.scss',
@@ -13,19 +13,18 @@ import { AuthService } from '../../../core/Services/auth.service';
 export class PersonalDataComponent {
   @Output() tabChange = new EventEmitter<number>();
 
-  private readonly _AuthService = inject(AuthService);
+  protected readonly _AuthService = inject(AuthService);
 
-  // ✅ اجعل البيانات Signals لتحديثها تلقائيًا بدون الحاجة لـ reload
+  
   userEmail = signal<string>(localStorage.getItem('EmailUser') || '');
-  userName = signal<string>(this._AuthService.saveuserdata().name || '');
-  city = this._AuthService.city; // يفترض أنها Signal داخل AuthService
-  details = this._AuthService.details; // يفترض أنها Signal داخل AuthService
+  city = this._AuthService.city; 
+  details = this._AuthService.details;
 
   goToEditUser(num: number) {
     this.tabChange.emit(num);
   }
 
   constructor() {
-    this._AuthService.GetAddress(); // ✅ استدعاء البيانات مباشرة عند تحميل المكون
+    this._AuthService.GetAddress(); 
   }
 }
