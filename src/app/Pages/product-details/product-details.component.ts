@@ -109,13 +109,18 @@ export class ProductDetailsComponent implements OnInit {
           'Conutt=',
           data.numOfCartItems
         );
+        this._ToastrService.success('Add To Cart', 'FreshCart', {timeOut: 2000});
       },
 
       error: (err) => {
         console.log(err);
         this.msgError = err.error.message;
-        this._ToastrService.error(this.msgError, 'FreshCart', {timeOut: 2000});
+        console.log(this.msgError);
+        this._ToastrService.error(this.msgError, 'FreshCart',{timeOut: 2000});
+        if(this.msgError=="You are not logged in. Please login to get access"){
+          
         this._Router.navigate(['/auth/login']);
+        }
       },
     });
 
