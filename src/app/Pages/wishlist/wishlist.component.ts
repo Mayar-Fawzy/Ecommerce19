@@ -1,17 +1,18 @@
+import { Router } from '@angular/router';
+import { CurrencyPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { AuthService } from '../../core/Services/auth.service';
 import { WishlistService } from '../../core/Services/wishlist.service';
 import { CartService } from '../../core/Services/cart.service';
 import Swal from 'sweetalert2';
 import { ICardProducts } from '../../core/interfaces/card-products';
-import { CurrencyPipe } from '@angular/common';
 import { CutPipe } from '../../core/Pipes/cut.pipe';
 import { RoutingModule } from '../../core/Shared/Module/routing/routing.module';
 import { IWishList } from '../../core/interfaces/iwish-list';
 import { CardProductComponent } from "../../Components/Products/card-product/card-product.component";
 import { ProductsService } from '../../core/Services/products.service';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @Component({
